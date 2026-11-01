@@ -14,10 +14,24 @@ Keep useful sections only. Replace guidance with source-backed content; distingu
 | ID | Source label | Observed role | Evidence |
 | --- | --- | --- | --- |
 
-## Activities, boundaries and directed interactions
+## Shape conventions
 
-| ID | From | To | Source action/label | Boundary or direction uncertainty | Evidence |
-| --- | --- | --- | --- | --- | --- |
+| Shape | Semantic type | Status (proposed/validated) | Scope/evidence |
+| --- | --- | --- | --- |
+
+Confirm or override conventions with the architect. Apply validated mappings consistently within this diagram/project; do not make them global defaults automatically.
+
+## Blocks
+
+| ID | Source label | Observed shape | Semantic type | Status (observed/inferred/validated) | Annotation | Group/boundary | Evidence |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+## Connections
+
+| ID | From block ID | To block ID | Exact arrow label/annotation | Direction | Uncertainty | Evidence |
+| --- | --- | --- | --- | --- | --- | --- |
+
+Preserve source labels and shape properties verbatim when available. Use `unknown` for unavailable shapes or ambiguous endpoints; do not infer missing arrow labels. Preserve non-linear connections.
 
 ## Logical information exchanged
 
