@@ -1,6 +1,6 @@
 # Architecture Design
 
-A Claude Code skill for **concept or brief → architecture interview → High-Level Design/Low-Level Design → implementation handoff**. It covers Structure → Sequence → Contracts → Implementation, with explicit decisions and resumable checkpoints.
+A Claude Code skill with two entry modes: **New Design** (concept or brief → architecture interview) and **Existing Design** (existing documentation → useful High-Level Design/Low-Level Design artifacts). Both lead to implementation handoff. It covers Structure → Sequence → Contracts → Implementation, with explicit decisions and resumable checkpoints.
 
 ## Install in Claude Code
 
@@ -32,19 +32,27 @@ Compare existing destinations before copying. For project scope, use `.claude/ag
 
 ## Use it
 
-### 1. Start from a concept or brief
+### 1. New Design — start from a concept or brief
 
 ```text
 /architecture-design Start from docs/brief.md in this project. Establish C1/C2 and the main logical information flows. Ask only the next useful batch of questions and keep proposed choices explicit.
 ```
 
-### 2. Resume the interview
+### 2. Existing Design — reuse architecture already documented
+
+```text
+/architecture-design Existing Design for the payments topic in docs/payments/. Reuse the relevant architecture documents without moving or rewriting sources. Produce a short gap analysis and C1/C2 HLD artifacts first; wait for my validation before C3, sequences, contracts and implementation detail. Ask at most 3–4 targeted questions only for blocking gaps; do not restart the full interview.
+```
+
+The [intake guidance](references/workflow.md#existing-design-intake) separates documented facts, inferences to validate and gaps, with source locators. It reuses existing components, relationships, decisions, scenarios and contracts, generates only useful outputs in the structure below, and keeps the same canonical format for Mermaid and architecture-to-lucid. No new skill or workflow phase is added.
+
+### 3. Resume either mode
 
 ```text
 /architecture-design Resume from interview/state.md. Read the checkpoint and relevant artifacts, reuse resolved answers and continue the recorded next action.
 ```
 
-### 3. Revise a decision
+### 4. Revise a decision
 
 ```text
 /architecture-design Review the requested change in decisions/002-integration.md. Identify affected components, sequences and contracts, discuss the tradeoff, then update the agreed artifacts and checkpoint.
@@ -71,7 +79,7 @@ decisions/             # minimal ADRs when needed
 interview/state.md     # paths, revisions, decisions and next action
 ```
 
-Create only useful files. Sequences live once inside the owning structured model; there is no separate `sequences/` artifact. Mermaid, Lucid and extracted JSON are derived outputs: change the canonical model first. Each model validates independently; necessary HLD context in LLD follows the shared schema’s reference rule. The [workflow](references/workflow.md) and [rendering guidance](references/canonical-rendering.md) define ownership and refresh behavior. Agree a mapping before migrating existing specifications.
+Create only useful files. Sequences live once inside the owning structured model; there is no separate `sequences/` artifact. Mermaid, Lucid and extracted JSON are derived outputs: change the canonical model first. Each model validates independently; necessary HLD context in LLD follows the shared schema’s reference rule. The [workflow](references/workflow.md) and [rendering guidance](references/canonical-rendering.md) define ownership and refresh behavior. Record a non-destructive source-to-output mapping for Existing Design; preserve sources in place and reuse conforming models.
 
 Use the bundled [templates](assets/templates/), [standards guidance](references/standards.md) and optional [delegation protocol](references/delegation.md) for the relevant operation. Team review after C2 is recommended; provisional continuation remains possible. Code generation requires a separate request.
 
@@ -89,7 +97,7 @@ python3 skills/architecture-to-lucid/scripts/validate_markdown.py /project/speci
 python3 skills/architecture-to-lucid/scripts/test_validate_markdown.py
 ```
 
-The blank template is intentionally incomplete. During discovery, checkpoint unresolved errors; do not invent design to pass validation. Schema validation does not prove Mermaid rendering or semantic fidelity; compare derived previews against selected canonical IDs and original sequence semantics. In Claude Code, exercise start, resume and changed-decision scenarios on a representative project before relying on the skill at work. Structural checks do not prove interview quality, implementation readiness or token savings. No exact context monitor, automatic restart or automatic main-session model switching is provided.
+The blank template is intentionally incomplete. During discovery, checkpoint unresolved errors; do not invent design to pass validation. Schema validation does not prove Mermaid rendering or semantic fidelity; compare derived previews against selected canonical IDs and original sequence semantics. In Claude Code, exercise New Design, Existing Design (including source preservation and blocking gaps), resume and changed-decision scenarios on a representative project before relying on the skill at work. Structural checks do not prove interview quality, implementation readiness or token savings. No exact context monitor, automatic restart or automatic main-session model switching is provided.
 
 ## Integration
 

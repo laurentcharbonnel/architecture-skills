@@ -6,11 +6,13 @@ Reusable Claude Code skills for architecture work. Keep reusable methods, generi
 
 | Skill | Purpose |
 | --- | --- |
-| [architecture-design](skills/architecture-design/README.md) | Guide architecture interviews through structure, sequences, contracts and implementation handoff. |
+| [architecture-design](skills/architecture-design/README.md) | Start a New Design interview or reuse existing documentation with Existing Design, through structure, sequences, contracts and implementation handoff. |
 | [lucid-to-brief](skills/lucid-to-brief/README.md) | Extract a factual architecture input brief from a Lucidchart diagram or supplied export. |
 | [architecture-to-lucid](skills/architecture-to-lucid/README.md) | Consume shared canonical Architecture Markdown (normalize other inputs once) and create matching editable Lucid C1/C2/C3 and sequence diagrams. |
 
 Each skill's README contains its installation, prerequisites, examples, resources and validation limits. Copy whole skill folders to preserve resources. Install architecture-design alongside architecture-to-lucid: it reuses that sibling's schema, template and validator; the interview itself needs no Lucid connection.
+
+Use **Existing Design** when a topic is already documented: bounded source intake, a short gap analysis, then C1/C2 validation before deeper artifacts. Original sources stay in place; facts, inferences and gaps remain explicit. See the [usage example](skills/architecture-design/README.md#2-existing-design--reuse-architecture-already-documented).
 
 ## Shared canonical architecture
 

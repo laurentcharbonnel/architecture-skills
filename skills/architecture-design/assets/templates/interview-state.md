@@ -1,4 +1,8 @@
 # Interview State
+Entry mode: New Design | Existing Design
+Selected topic / relevant source paths and locators / source-to-output mapping:
+Blocking intake questions / resolved answers:
+C1/C2 architect validation / provisional continuation and risks:
 Phase: Structure | Sequence | Contracts | Implementation
 Design level: high level design | low level design
 Current focus:

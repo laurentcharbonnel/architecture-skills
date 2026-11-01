@@ -4,7 +4,7 @@ Read the existing [Architecture Markdown v1 schema](../../architecture-to-lucid/
 
 ## Interview update cycle
 
-1. Resolve the owning model path/revision from `interview/state.md`: `high-level-design/architecture.md` for C1/C2, `low-level-design/architecture.md` for C3 and detailed sequences. Apply the shared schema’s context-reference rule before validating each file independently. For existing specifications, agree a mapping before migration; normalize only once if needed. Reuse conforming input directly.
+1. Resolve the owning model path/revision from `interview/state.md`: `high-level-design/architecture.md` for C1/C2, `low-level-design/architecture.md` for C3 and detailed sequences. Apply the shared schema’s context-reference rule before validating each file independently. For Existing Design, record the source-to-output mapping without moving or rewriting sources; normalize nonconforming input only once and reuse conforming input directly. Follow the [intake guidance](workflow.md#existing-design-intake) before rendering.
 2. Write supported answers/proposals into the canonical tables or sequence sections. Cite brief/specification locators or persisted interview decisions in Sources. Use Proposed for inferences, Open for unresolved choices, Confirmed only with evidence. Interview/review progress is not evidence by itself. Record material gaps under Open questions, with affected IDs.
 3. Validate with the existing helper, resolving its path from the sibling skill:
    ```bash
