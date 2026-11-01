@@ -11,7 +11,7 @@ Keep the architect in control. Converse in the user's language; write artifacts 
 
 - **Start or resume:** locate the specifications and `interview/state.md`; ask for the project path only if unknown. Read the checkpoint first, then relevant linked artifacts. Continue its next action unless redirected; do not re-ask resolved questions.
 - **Design or revise:** read only the relevant phase and output paths in [workflow.md](references/workflow.md). Use its linked template when creating the artifact. Work through Structure → Sequence → Contracts → Implementation; revisit upstream choices when evidence changes.
-- **Standards intake or conflict:** read [standards.md](references/standards.md). Locate the configured standards library (ask once if unknown) and save its path in the checkpoint. Use the [standard template](assets/templates/standard.md) for proposals. Apply approved standards by reference without asking again; require explicit approval to change the shared library.
+- **Standards intake or conflict:** read [standards.md](references/standards.md). Locate the authorized enterprise repository for standards and platform catalog (ask once if needed) and save its location in the checkpoint. Generic design patterns and artifact templates stay bundled with this public skill. Use the [standard template](assets/templates/standard.md) for proposals. Apply approved standards by reference without asking again; require explicit approval to change the shared library.
 - **Delegate or hand off:** read [delegation.md](references/delegation.md) only when needed. Stay in the current agent for small tasks; do not silently change its model.
 
 ## Architecture and evidence
