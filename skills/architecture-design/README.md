@@ -19,7 +19,7 @@ Run the copy from the repository root. Compare or back up an existing destinatio
 
 Provide the project specifications path. Generic design patterns and artifact templates are bundled with this skill. When enterprise guidance is needed, provide access to an authorized enterprise GitHub repository containing standards and a platform catalog. The skill records its location once and applies approved rules by reference. It works without enterprise access, leaving enterprise choices unverified rather than inventing them. No technology or enterprise standard is pre-approved. Keep specifications and implementation repositories separate where project policy requires it.
 
-No MCP connection is required for the interview. To extract a Lucid source first, use [lucid-to-brief](../lucid-to-brief/README.md); to publish C4 views, use [architecture-to-lucid](../architecture-to-lucid/README.md).
+Lucid is strictly on-demand: never call its connector automatically during interviews, checkpoints or artifact synchronization. Only an explicit architect request authorizes Lucid creation/update for the requested C1/C2/C3 views or sequences, reusing canonical Markdown without restarting the interview; prefer targeted updates when the MCP supports them. Mermaid remains the default lightweight rendering in `overview.md`. No MCP connection is required for the interview. To extract a Lucid source first, use [lucid-to-brief](../lucid-to-brief/README.md); to publish C4 views, use [architecture-to-lucid](../architecture-to-lucid/README.md).
 
 Optional agents are in [claude-agents/](../../claude-agents/). From the repository root:
 

@@ -1,17 +1,19 @@
 ---
 name: architecture-to-lucid
-description: Normalize architecture documentation into compact Markdown and create matching editable Lucid C1, C2, C3 and sequence diagrams. Use for Markdown-to-Lucid conversion and fidelity checks.
+description: Normalize architecture documentation into compact Markdown; create or update matching editable Lucid C1, C2, C3 and sequence diagrams only on explicit architect request. Use for Markdown-to-Lucid conversion and fidelity checks.
 ---
 
 # Architecture to Lucid
 
 Converse in the user's language; write artifacts and diagram labels in English. Complement the architecture-design interview rather than repeating it.
 
+Lucid generation is **STRICTLY on-demand**: never automatically call the Lucid connector or generate Lucid diagrams during interviews, checkpoints or artifact synchronization. Only an explicit architect request to create or update Lucid authorizes rendering; reuse the existing canonical Markdown without restarting the interview, and process only the explicitly requested C1/C2/C3 views or sequences. Prefer targeted updates to existing Lucid diagrams when the MCP supports them, rather than full recreation. Mermaid remains the default lightweight rendering in `overview.md`; normalization, validation or a generic preview request does not authorize Lucid generation.
+
 ## Load only the selected workflow
 
 - **Existing canonical Markdown (including architecture-design output):** reuse each owning path and its IDs directly (HLD C1/C2; LLD C3/sequences); validate each supplied model without re-normalizing or creating a parallel canonical file. Apply the shared schema’s context-reference rule when both levels exist.
 - **Normalize other documentation:** use [assets/architecture-template.md](assets/architecture-template.md) and [references/markdown-format.md](references/markdown-format.md). Save traceable Markdown; publishing requires a creation request.
-- **Create Lucid:** validate the Markdown, then read [references/lucid-workflow.md](references/lucid-workflow.md). A clear creation request is sufficient authorization; respect actual tool access controls.
+- **Create or update Lucid on explicit request:** validate the Markdown, then read [references/lucid-workflow.md](references/lucid-workflow.md). The explicit request is sufficient authorization within its diagram scope; respect actual tool access controls.
 - **Review edits/fidelity:** use the saved mapping and workflow reference. Integrate edits into Markdown when requested; otherwise propose a diff.
 
 Load [assets/domain-tasks-example.md](assets/domain-tasks-example.md) only when an example is useful. Do not load all references, examples or script code by default.

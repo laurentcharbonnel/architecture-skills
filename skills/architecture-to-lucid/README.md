@@ -43,7 +43,7 @@ You can also copy [architecture-template.md](assets/architecture-template.md) an
 /architecture-to-lucid Create the C1 and C2 views from docs/architecture.md in Lucid. Apply the convention, verify actual readback and visual output, and save the links and fidelity report.
 ```
 
-Request C3 and sequence sections when needed. Missing details stay explicit; logical views need not select a stack. A plain request to normalize documentation does not publish it.
+Request C3 and sequence sections when needed. Missing details stay explicit; logical views need not select a stack. Lucid creation/update is strictly on-demand: only an explicit architect request authorizes the selected C1/C2/C3 views or sequences. Never call the connector automatically during interviews, checkpoints or artifact synchronization. Reuse canonical Markdown without restarting the interview; prefer targeted updates to existing diagrams when the MCP supports them. Mermaid remains the default lightweight rendering in `overview.md`. Normalization, validation and generic preview requests do not authorize Lucid generation.
 
 ### 3. Review a manual change
 
@@ -79,4 +79,4 @@ See [recorded validation results](VALIDATION.md). The blank template intentional
 
 ## Integration
 
-Keep the existing architecture-design skill responsible for the interview, High-Level Design and Low-Level Design. Use this complementary skill to consume its canonical Markdown directly, publish selected views, and verify diagrams. The interview needs this folder installed alongside architecture-design for its shared schema/template/validator, but no Lucid connection until publication. Normalization is only needed for other input formats. Semantic edits update Markdown first and refresh affected renderings; there is no automatic synchronization or change to shared standards.
+Keep the existing architecture-design skill responsible for the interview, High-Level Design and Low-Level Design. Use this complementary skill to consume its canonical Markdown directly, publish selected views, and verify diagrams. The interview needs this folder installed alongside architecture-design for its shared schema/template/validator, but no Lucid connection until publication. Normalization is only needed for other input formats. Semantic edits update Markdown first; Lucid refreshes require an explicit architect request; there is no automatic synchronization or change to shared standards.

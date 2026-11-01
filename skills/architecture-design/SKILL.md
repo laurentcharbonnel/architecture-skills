@@ -22,8 +22,10 @@ C1/C2 form the high level design; C3 begins the low level design. Establish resp
 
 - During interview back-and-forth, incrementally edit only affected records in the structured canonical model; do not regenerate Mermaid or human documents at every exchange.
 - On validation of an existing phase/checkpoint, synchronize affected Mermaid diagrams and `overview.md` explanations from the canonical model.
-- On an explicit preview request, generate only the requested diagram from the current canonical model.
+- On an explicit preview request, generate only the requested Mermaid diagram from the current canonical model unless the architect explicitly requests Lucid.
 - When revisiting a decision, update only impacted canonical records and dependent artifacts, applying the same synchronization timing.
+
+Lucid generation is **STRICTLY on-demand**: never automatically call the Lucid connector or generate Lucid diagrams during interviews, checkpoints or artifact synchronization. Only an explicit architect request to create or update Lucid authorizes rendering; hand off to [architecture-to-lucid](../architecture-to-lucid/SKILL.md) using the existing canonical Markdown, without restarting the interview, and limit work to the explicitly requested C1/C2/C3 views or sequences. Prefer targeted updates to existing Lucid diagrams when the MCP supports them, rather than full recreation. Mermaid remains the default lightweight rendering in `overview.md`.
 
 Keep Structure → Sequence → Contracts → Implementation unchanged; add no steps, files or Proposed/Accepted/Published lifecycle states. Preserve human-readable overviews, agent-readable canonical models and the shared architecture-to-lucid schema.
 
