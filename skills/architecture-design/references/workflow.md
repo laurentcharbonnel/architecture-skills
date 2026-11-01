@@ -1,11 +1,11 @@
 # Phase guidance
 
-Read only the section needed for the current phase. Keep outputs in the project repository.
+Read only the section needed for the current phase. Keep outputs in the project specifications repository, following the high-level-design/ and low-level-design/ separation in SKILL.md.
 
 ## Structure
 Identify goals, actors, scope, constraints and system boundaries (C1); deployable/runnable containers, responsibilities and connections (C2); logical components and ownership (C3).
 At C2, capture what information moves and where it originates without prematurely defining fields. Offer a short team review: choices, tradeoffs, risks, open decisions. Review status: draft, in-review, reviewed; never a mandatory gate.
-Keep high level design and low level design artifacts distinct; do not impose a storage layout on existing projects.
+Use the project output structure defined in SKILL.md: C1/C2 in high-level-design/overview.md and review.md; C3 and implementation details in low-level-design/. For existing projects, agree the mapping or migration before moving artifacts.
 
 ## Sequence
 Choose a concrete scenario with the architect; do not assume business scenarios exist. Include actors, receiving components, sync/async calls, correlation, retries and failure paths when relevant. Trace messages to structure elements. Reuse stable names.

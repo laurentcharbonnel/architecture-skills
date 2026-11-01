@@ -33,7 +33,7 @@ Configure and authorize your Lucidchart MCP in Claude Code before passing a docu
 ## Architecture resources and project separation
 
 The architecture-design folder includes its templates and references, so copying that folder preserves the workflow. Load only the resource needed for the current artifact.
-Keep project artifacts in their own repository, for example `high-level-design/`, `low-level-design/`, `decisions/` and `interview/state.md`; retain existing layouts when present.
+Keep project artifacts in their own repository. Use `high-level-design/overview.md` (C1/C2) and `high-level-design/review.md`; place C3 and detailed artifacts in `low-level-design/components/`, `sequences/`, `contracts/` and `orchestrators/`. Store ADRs in `decisions/` and progress in `interview/state.md`. Create only useful artifacts. For an existing layout, agree a mapping or targeted migration before moving files.
 Configure the external shared standards path once in that checkpoint. Use the bundled standard template for proposals; no enterprise standard is pre-approved here.
 Keep frontend/backend implementation repositories separate where project policy requires it.
 
