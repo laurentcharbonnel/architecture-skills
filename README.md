@@ -5,7 +5,7 @@ Concise, interview-driven skills for Claude Code. Keep reusable methods here and
 | Skill | Purpose |
 | --- | --- |
 | architecture-design | Turn a concept or brief into implementation-ready architecture through Structure → Sequence → Contracts → Implementation. |
-| lucidchart-to-brief | Turn a supplied business diagram into a factual brief and open questions; do not invent technical architecture. |
+| lucidchart-to-brief | Read a Lucidchart URL through the configured MCP and turn the business diagram into a factual brief and open questions; do not invent technical architecture. |
 
 ## Install for your user (Linux/macOS)
 
@@ -25,6 +25,17 @@ To update, run `git pull --ff-only` in this clone and repeat the copies after re
 For project-only installation, copy into the project's `.claude/skills/` instead.
 
 Optional delegation: copy the two files in `claude-agents/` into `~/.claude/agents/` (or the project's `.claude/agents/`). Check them with `/agents`. Skills work without these agents. Model aliases resolve according to your Claude Code environment; availability and usage limits still apply.
+
+## Lucidchart prerequisite
+
+Configure and authorize your Lucidchart MCP in Claude Code before passing a document URL. The skill discovers its actual read tools; it does not assume server-specific names or install/authenticate a server. A supplied export is a fallback when access or capabilities are insufficient.
+
+## Architecture resources and project separation
+
+The architecture-design folder includes its templates and references, so copying that folder preserves the workflow. Load only the resource needed for the current artifact.
+Keep project artifacts in their own repository, for example `high-level-design/`, `low-level-design/`, `decisions/` and `interview/state.md`; retain existing layouts when present.
+Configure the external shared standards path once in that checkpoint. Use the bundled standard template for proposals; no enterprise standard is pre-approved here.
+Keep frontend/backend implementation repositories separate where project policy requires it.
 
 ## Working agreement
 

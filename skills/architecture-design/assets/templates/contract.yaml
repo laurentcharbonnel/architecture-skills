@@ -1,0 +1,7 @@
+openapi: 3.1.0
+info:
+  title: Component API
+  version: 0.1.0
+paths: {}
+# Skeleton only: not an implementation-ready contract.
+# Define real operations, schemas, security and error responses from validated interactions.

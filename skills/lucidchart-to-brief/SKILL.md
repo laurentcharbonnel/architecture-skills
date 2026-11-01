@@ -1,12 +1,12 @@
 ---
 name: lucidchart-to-brief
-description: Extract a concise factual architecture input brief from a supplied Lucidchart business diagram, export, screenshot or equivalent process diagram, using a short interview to resolve ambiguity.
+description: Extract a concise factual architecture input brief from a Lucidchart URL via the configured Lucidchart MCP, or a supplied export, screenshot or equivalent process diagram, using a short interview to resolve ambiguity.
 ---
 # Lucidchart to Brief
 
 Produce an English Markdown brief for architecture-design or independent use. Preserve business meaning; do not redesign the system.
 
-1. Obtain the diagram through an available authorized connector, or use a supplied PDF/image/export/text. Do not claim access to an unread Lucidchart URL. Ask for an accessible export if blocked.
+1. Accept a Lucidchart document URL as the normal input. Discover the configured Lucidchart MCP tools and read [lucidchart-mcp.md](references/lucidchart-mcp.md). Use the MCP to retrieve the document before asking the user to describe or export it. For an explicitly supplied export, read it directly. Never claim access to an unread URL.
 2. Inspect readable labels, boundaries, actors, blocks and arrows. Preserve source names and direction. Separate observations from interpretations; mark unreadable labels, ambiguous connectors and missing legends. Do not treat proximity as a relationship.
 3. Draft the first brief early. Ask at most 3–4 related questions that materially affect interpretation. Reuse answers and do not invent business scenarios, components, APIs or technologies.
 4. Update only affected sections after answers. Keep unresolved ambiguities visible.

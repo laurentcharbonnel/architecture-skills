@@ -10,15 +10,24 @@ Keep the architect in control. Write artifacts in English. Ask at most 3–4 rel
 1. Locate the project specifications and `interview/state.md`; ask for the project path only if unknown. Accept a brief, diagram, existing specs or an interview from scratch.
 2. Read the checkpoint first, then only relevant linked artifacts and standards. Do not scan or reload the whole repository.
 3. Resume its next action unless the user requests a different phase. Do not re-ask resolved questions. Read [workflow.md](references/workflow.md) only for the current phase.
-4. Apply approved standards by reference without asking again for the same pattern. Surface conflicts. Require explicit approval to add, change or retire a reusable standard.
+4. Locate the configured shared standards library (or ask once for its path). Read [standards.md](references/standards.md) only for standards intake or conflicts. Use the [standard template](assets/templates/standard.md) when proposing a new entry.
+5. Apply approved standards by reference without asking again for the same pattern. Surface conflicts. Require explicit approval to add, change or retire a reusable standard.
 
 ## Workflow
-- **Structure:** C1 context and C2 containers form the high level design; C3 components begin the low level design. Establish responsibilities, boundaries, dependencies and logical information flows. Recommend team review after C2; record review status, but allow provisional continuation.
+- **Structure:** C1 context and C2 containers form the high level design; C3 components begin the low level design. Establish responsibilities, boundaries, dependencies and logical information flows. Recommend team review after C2; record feedback and review status, but allow provisional continuation. Before C3, summarize unresolved high level decisions and downstream risks without blocking.
 - **Sequence:** model nontrivial scenarios after the relevant structure is clear. Cover important failure/retry paths; skip diagrams for trivial interactions.
 - **Contracts:** derive API/event/data schemas after C3 and interactions. Make the receiving component own the contract. Link each contract to an interaction; avoid repeating schemas in prose.
 - **Implementation:** provide component specifications, dependencies, acceptance criteria and open decisions. Include orchestrator state machines where applicable; generate code only if separately requested.
 
-Use Mermaid for C1/C2/C3 and useful sequences. Revisit earlier phases when evidence changes. Do not force a C4 code diagram or developer-owned internal class layout.
+Use the relevant bundled template only when creating its artifact:
+- Structure: [overview](assets/templates/high-level-overview.md), [component](assets/templates/component.md).
+- Sequence: [flow](assets/templates/flow.md).
+- Contracts: [OpenAPI skeleton](assets/templates/contract.yaml) for HTTP only.
+- Implementation: [component](assets/templates/component.md), [orchestrator](assets/templates/orchestrator.md).
+- Review or significant choice: [review](assets/templates/review.md), [decision](assets/templates/decision.md).
+- Checkpoint: [interview state](assets/templates/interview-state.md).
+
+Use Mermaid for C1/C2/C3 and useful sequences. Revisit earlier phases when evidence changes; sketch a contract early if needed to decide, marking it provisional. Do not force a C4 code diagram or developer-owned internal class layout.
 
 ## Save and keep context small
 Update only changed artifacts and their dependants. Record a minimal decision only when a tradeoff needs traceability.
