@@ -1,6 +1,8 @@
 # Shared standards
 
-Keep the standards library separate from project specifications. Locate its configured path once and store it in the project checkpoint. Accept new guidance independently of any active project.
+Keep generic design patterns and artifact templates in the public skill. Enterprise architecture decisions, approved technologies, constraints and the platform component catalog belong in an authorized enterprise repository, separate from this public skill and project specifications. Locate the enterprise repository once when needed and record its location in the project checkpoint; never hardcode enterprise URLs or copy private content into the public repository. Work without enterprise access by marking standards and platform choices unverified, never inventing them.
+
+When designing, consult relevant enterprise standards and platform catalog entries on demand; distinguish mandated decisions from available platform options and open design choices. Do not copy the catalog into project artifacts unnecessarily.
 
 For intake:
 1. Read the supplied source and the relevant existing entries only.
