@@ -1,6 +1,6 @@
 # Architecture Skills
 
-Reusable Claude Code skills for architecture work. Keep reusable methods here and project specifications in their own repositories.
+Reusable Claude Code skills for architecture work. Keep reusable methods, generic design patterns and artifact templates here; project specifications stay in their own repositories. Enterprise standards and platform catalogs belong in a separate, authorized enterprise repository.
 
 ## Skills
 
@@ -15,7 +15,7 @@ Each skill's README contains its installation, prerequisites, examples, resource
 ## Shared principles
 
 - Keep the architect responsible for decisions; distinguish confirmed facts, proposals and open questions.
-- Preserve source evidence and approved standards. Change shared standards only with explicit approval.
+- Preserve source evidence and approved enterprise standards. Change enterprise standards only with explicit approval.
 - Write professional artifacts in English; converse in the user's preferred language.
 - Keep entry points concise. Load references, templates and examples only for the current operation.
 - Reuse resolved answers and checkpoints. Update affected artifacts rather than regenerating entire specifications.
