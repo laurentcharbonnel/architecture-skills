@@ -18,15 +18,15 @@ A newly copied blank template is intentionally incomplete. During initial discov
 
 ## Structure to Mermaid
 
-Read the selected Views row and resolve its Elements and Relationships against canonical tables. Use exactly those nodes/edges, directions and Action labels; preserve Details via adjacent references when too long for labels. Do not invent inferred aggregate edges: C1 and C2 use their own declared relationship IDs.
+Read the selected Views row and resolve its Elements and Relationships against canonical tables. Apply [Readable Mermaid](../SKILL.md#readable-mermaid): each focused rendering may show a subset of that view's elements and relationships; identify the included canonical IDs and explain its scope beside the diagram. Preserve directions and meaning; shorten Action labels faithfully and keep full wording and Details accessible through adjacent canonical references. Do not invent inferred aggregate edges: C1 and C2 use their own declared relationship IDs.
 
-Use a compact Mermaid flowchart with global element IDs as node IDs and relationship IDs in an adjacent derivation comment if the renderer cannot attach them to edges. Include Name, Type and Responsibility, plus known technology/deployment when useful. Escape labels for Mermaid without changing meaning. Use actor/store visual roles when supported; indicate any visual approximation. At C2/C3 draw the Focus as a boundary and place its visible direct children inside; keep contextual elements outside. Do not also draw Focus as an inner node. Ownership comes from Scope/Parent, not placement.
+Use a compact Mermaid flowchart with global element IDs as node IDs and relationship IDs in an adjacent derivation comment if the renderer cannot attach them to edges. Keep node labels short, using Name and only essential Type or technology hints; reference Responsibility and other details in the canonical model. Escape labels for Mermaid without changing meaning. Use actor/store visual roles when supported; indicate any visual approximation. At C2/C3 draw the Focus as a boundary and place its visible direct children inside; keep contextual elements outside. Do not also draw Focus as an inner node. Ownership comes from Scope/Parent, not placement.
 
-After generation compare selected node/edge sets, endpoints, labels, ownership and boundary membership with the canonical view. Mermaid is a discussion preview; visual styling need not reproduce Lucid's layout.
+After generation compare the included node/edge subset, endpoints, label meaning, ownership and boundary membership with the canonical view; keep omitted information in the complete canonical model. Mermaid is a discussion preview; visual styling need not reproduce Lucid's layout.
 
 ## Canonical sequence to Mermaid
 
-Read the selected canonical PlantUML block and metadata, never another diagram. Preserve explicit participant declaration order, IDs, display names, message order, endpoints, text, group nesting, notes and activation. Map supported semantics using the [official Mermaid sequence syntax](https://mermaid.js.org/syntax/sequenceDiagram.html) for the available renderer:
+Read the selected canonical PlantUML block and metadata, never another diagram. For a crowded sequence, use clearly scoped excerpts with canonical references and a short explanation of each excerpt. Within each excerpt, preserve participant order and IDs, message order, endpoints, group nesting, notes and activation; shorten display names and message text only without changing meaning, with full wording accessible in the canonical source. Map supported semantics using the [official Mermaid sequence syntax](https://mermaid.js.org/syntax/sequenceDiagram.html) for the available renderer:
 
 | Canonical PlantUML | Derived Mermaid |
 |---|---|

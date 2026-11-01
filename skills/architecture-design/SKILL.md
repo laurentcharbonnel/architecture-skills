@@ -31,6 +31,10 @@ Keep Structure → Sequence → Contracts → Implementation unchanged; add no s
 
 Offer team review after C2, before C3. Record unresolved high level decisions and downstream risks; provisional continuation remains allowed. Preserve source evidence and approved standards; do not invent technologies or enterprise defaults. Record the source-to-output mapping; preserve existing sources without moving or rewriting them, reuse conforming models, and avoid competing canonical outputs. Generate code only if separately requested.
 
+## Readable Mermaid
+
+For Mermaid diagrams in `design-doc.md`, prioritize readability over exhaustiveness: aim for 5–9 elements per view, show only essential relationships, use short labels and a consistent abstraction level. Split crowded diagrams into several focused views and add a short explanation of each view. `architecture-model.md` remains the complete canonical model; never remove information from it to simplify a diagram.
+
 ## Token budget and persistence
 
 Keep project outputs in the specifications repository. Update affected artifacts and dependants only. Record minimal ADRs when tradeoffs need traceability. Do not scan or reload the whole repository.
