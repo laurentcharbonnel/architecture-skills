@@ -1,18 +1,31 @@
-# C4 Markdown to C4 Lucid kit
+# C4 Markdown to C4 Lucid
 
 A compact Claude Code skill for **external documentation → structured Markdown → editable Lucid C4 and sequence diagrams**. Conversations can be in French; all professional artifacts are in English.
 
 ## Install in Claude Code
 
-Copy the `skills/c4-markdown-to-c4-lucid` folder into your project's `.claude/skills/` directory, so the entry point is `.claude/skills/c4-markdown-to-c4-lucid/SKILL.md`. For use across projects, copy it into `~/.claude/skills/c4-markdown-to-c4-lucid/` instead. [Official Claude Code skill documentation](https://code.claude.com/docs/en/skills).
+Clone the repository if needed:
 
-The skill uses the existing Lucid MCP connection. If not configured, run:
+```bash
+git clone https://github.com/laurentcharbonnel/architecture-skills.git
+cd architecture-skills
+mkdir -p ~/.claude/skills
+cp -R skills/c4-markdown-to-c4-lucid ~/.claude/skills/
+```
+
+Run the copy from the repository root. Compare or back up an existing destination first. For project-only installation, copy the folder into the project's `.claude/skills/` instead. To update, run `git pull --ff-only` in the clone and repeat the copy after reviewing local changes. [Claude Code skills](https://code.claude.com/docs/en/skills).
+
+## Prerequisites
+
+Configure the Lucid MCP once in Claude Code:
 
 ```bash
 claude mcp add --transport http lucid https://mcp.lucid.app/mcp
 ```
 
-Then run `/mcp` in Claude Code and authorize Lucid. Team/Enterprise accounts may require administrator enablement. This package contains no credentials and does not configure or authenticate an account automatically. [Official Lucid setup](https://help.lucid.co/hc/en-us/articles/42578801807508-Integrate-Lucid-with-AI-tools-using-the-Lucid-MCP-server).
+Then run `/mcp` in Claude Code and authorize Lucid. Team/Enterprise accounts require administrator enablement of MCP access; your AI tool administrator may also need to authorize the integration. Reuse an existing authorized connection rather than adding a duplicate. [Official Lucid setup](https://help.lucid.co/hc/en-us/articles/42578801807508-Integrate-Lucid-with-AI-tools-using-the-Lucid-MCP-server).
+
+No credentials are bundled, and the skill does not configure or authenticate an account automatically.
 
 ## Use it
 
@@ -22,7 +35,7 @@ Then run `/mcp` in Claude Code and authorize Lucid. Team/Enterprise accounts may
 /c4-markdown-to-c4-lucid Normalize docs/external-spec.md into docs/architecture.md using the bundled template. Preserve source references, mark inferred structure Proposed and list missing information. Do not create Lucid documents yet.
 ```
 
-You can also copy [skills/c4-markdown-to-c4-lucid/assets/architecture-template.md](../skills/c4-markdown-to-c4-lucid/assets/architecture-template.md) and fill it yourself. The completed [domain-tasks-example.md](../skills/c4-markdown-to-c4-lucid/assets/domain-tasks-example.md) demonstrates C1, C2, a proposed logical C3 and a sequence with failure/retry branches.
+You can also copy [architecture-template.md](assets/architecture-template.md) and fill it yourself. The completed [domain-tasks-example.md](assets/domain-tasks-example.md) demonstrates C1, C2, a proposed logical C3 and a sequence with failure/retry branches.
 
 ### 2. Create Lucid from the Markdown
 
@@ -38,6 +51,10 @@ Request C3 and sequence sections when needed. Missing details stay explicit; log
 /c4-markdown-to-c4-lucid Compare the saved architecture.md and Lucid mapping with the current diagrams. Report changes, then update the Markdown to reflect my edits.
 ```
 
+## Resources and output
+
+The [Markdown schema](references/markdown-format.md) defines the canonical tables and defaults. The [Lucid workflow](references/lucid-workflow.md) defines creation, mappings and fidelity checks. Save the canonical Markdown, mapping and fidelity report in the project. Read the completed example only when useful.
+
 ## Token efficiency
 
 - The entry point is about 400 words; detailed references load by operation.
@@ -48,7 +65,7 @@ Request C3 and sequence sections when needed. Missing details stay explicit; log
 
 Token savings depend on the source and tool responses; this is not a fixed token-count guarantee.
 
-## Local checks
+## Validation and limits
 
 Python 3.9+; standard library only. From the repository root:
 
@@ -58,8 +75,8 @@ python3 skills/c4-markdown-to-c4-lucid/scripts/validate_markdown.py docs/archite
 python3 skills/c4-markdown-to-c4-lucid/scripts/test_validate_markdown.py
 ```
 
-The blank template intentionally fails until populated. The helper checks structural consistency, not business correctness or Lucid renderability. Native sequence source must be read back because generic fetch was observed to omit actor/database interactions. Fidelity is assessed separately from visual quality.
+See [recorded validation results](VALIDATION.md). The blank template intentionally fails until populated. The helper checks structural consistency, not business correctness or Lucid renderability. Native sequence source must be read back because generic fetch was observed to omit actor/database interactions. Fidelity is assessed separately from visual quality.
 
-## Integration with the architecture framework
+## Integration
 
 Keep the existing architecture-design skill responsible for the interview, HLD and LLD. Use this complementary skill to normalize its output, publish selected views, and verify diagrams. No changes to shared standards or automatic synchronization are included.

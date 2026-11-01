@@ -2,25 +2,28 @@
 name: lucidchart-to-brief
 description: Extract a concise factual architecture input brief from a Lucidchart URL via the configured Lucidchart MCP, or a supplied export, screenshot or equivalent process diagram, using a short interview to resolve ambiguity.
 ---
+
 # Lucidchart to Brief
 
-Produce an English Markdown brief for architecture-design or independent use. Preserve business meaning; do not redesign the system.
+Converse in the user's language; produce an English Markdown brief for architecture-design or independent use. Preserve business meaning; do not redesign the system.
 
-1. Accept a Lucidchart document URL as the normal input. Discover the configured Lucidchart MCP tools and read [lucidchart-mcp.md](references/lucidchart-mcp.md). Use the MCP to retrieve the document before asking the user to describe or export it. For an explicitly supplied export, read it directly. Never claim access to an unread URL.
-2. Inspect readable labels, boundaries, actors, blocks and arrows. Preserve source names and direction. Separate observations from interpretations; mark unreadable labels, ambiguous connectors and missing legends. Do not treat proximity as a relationship.
-3. Draft the first brief early. Ask at most 3–4 related questions that materially affect interpretation. Reuse answers and do not invent business scenarios, components, APIs or technologies.
-4. Update only affected sections after answers. Keep unresolved ambiguities visible.
-5. Save the brief at an agreed project path, plus `interview/brief-state.md` after meaningful steps: source/version, resolved questions, open questions, brief path and next action. Read this checkpoint first on resume.
-6. Hand off the brief path to architecture-design when requested; do not automatically run the full design workflow.
+## Load only the selected workflow
 
-Use these brief sections only when useful:
-- Source and scope.
-- Actors and external systems.
-- Observed activities, boundaries and directed interactions (stable IDs when useful).
-- Logical information exchanged, where observable.
-- Validated interpretations and constraints.
-- Uncertainties and questions for architecture design.
+- **Read a Lucidchart URL:** discover the configured MCP tools and read [lucidchart-mcp.md](references/lucidchart-mcp.md). Retrieve the source before asking for a description or export. Never claim access to an unread URL. If setup is missing, point to the MCP prerequisites in [README.md](README.md); do not configure or authenticate automatically.
+- **Read a supplied export or screenshot:** inspect it directly. State which labels, connectors and pages are observable; live retrieval is unnecessary unless requested or needed for missing evidence.
+- **Draft a brief:** use [assets/brief-template.md](assets/brief-template.md), retaining useful sections only. Draft early, then ask at most 3–4 related questions that materially affect interpretation.
+- **Resume or revise:** read `interview/brief-state.md` first, then only relevant source material and affected brief sections. Reuse resolved answers.
 
-Cite diagram page/region or element labels for important observations. Keep inferred details explicitly provisional.
-Stay in the current agent for small tasks. For a large extraction, use architecture-extract if installed, giving exact inputs and a bounded output. Retain architect review for uncertain meaning.
-If the architecture-design delegation reference is available, read it only when needed; otherwise use a compact handoff containing findings, evidence, assumptions, unresolved questions and next action. Checkpoint before a fresh worker or coordinator. Never assume exact context monitoring or automatic agent restart.
+## Source fidelity
+
+Preserve readable names, actors, blocks, boundaries and arrow direction. Separate observations from interpretations. Mark unreadable labels, ambiguous connectors and missing legends; proximity alone is not a relationship. Cite page/region, evidence IDs or element labels for important observations.
+
+Keep logical information exchanges only where observable. Do not invent scenarios, components, APIs or technologies. Keep inferred details provisional and unresolved questions explicit. Disclose capability gaps; never modify the source or its sharing settings during extraction.
+
+## Token budget and persistence
+
+Scope and cache retrieval as described in the MCP reference. Update affected sections only. Save the brief at an agreed project path and `interview/brief-state.md` after meaningful steps: source/version, inspected evidence and gaps, resolved/open questions, brief path and next action.
+
+Stay in the current agent for small tasks. For a large extraction, use architecture-extract if installed with exact inputs and a bounded output; retain architect review of uncertain meaning. Read architecture-design's delegation reference only if available and needed. Otherwise hand off findings, evidence, assumptions, open questions and next action. Checkpoint before a fresh worker; do not assume exact context monitoring or automatic restart.
+
+Hand off the brief path to architecture-design when requested; do not automatically run the full design workflow.

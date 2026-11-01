@@ -4,18 +4,18 @@ Source: architecture-framework-v2(1).zip (2026-10-31). Compare reusable content 
 
 | ZIP capability/resource | Current location or intentional evolution |
 | --- | --- |
-| Interview, 3–4 questions, approved answers, English artifacts | architecture-design/SKILL.md |
+| Interview, 3–4 questions, approved answers, English artifacts | skills/architecture-design/SKILL.md |
 | C1 scope and C2 containers / logical information flow | Structure, references/workflow.md; assets/templates/high-level-overview.md |
 | C3 components and interactions | Structure then Sequence; component.md and flow.md templates |
 | Technical API/event/data contracts | Contracts; workflow reference and contract.yaml skeleton |
 | Implementation readiness, no default code generation | Implementation and component.md; code only by separate request |
-| Recommended team review, nonblocking continuation | SKILL.md; review.md template; checkpoint review status/feedback |
+| Recommended team review, nonblocking continuation | SKILL.md and references/workflow.md; review.md template; checkpoint review status/feedback |
 | Provisional choices and downstream impact | SKILL.md; checkpoint and affected-artifact tracking |
 | Independent standards intake, approval and conflicts | references/standards.md; standard.md template |
 | Standard source/version/scope/rationale/exceptions | standard.md; applied-standard checkpoint entries |
 | Minimal decision record | decision.md template |
 | Resumable interview | interview-state.md template |
-| Reusable/project repository separation | README; project output stays outside this repository |
+| Reusable/project repository separation | Root README and skills/architecture-design/README.md; project output stays outside this repository |
 | External sibling templates dependency | Templates now bundled inside the skill for autonomous installation |
 | Old five-step labels | Replaced by the agreed Structure → Sequence → Contracts → Implementation |
 | HLD/LLD filenames and terms | Written as high level design / low level design |
