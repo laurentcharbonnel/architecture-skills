@@ -79,4 +79,4 @@ See [recorded validation results](VALIDATION.md). The blank template intentional
 
 ## Integration
 
-Keep the existing architecture-design skill responsible for the interview, HLD and LLD. Use this complementary skill to normalize its output, publish selected views, and verify diagrams. No changes to shared standards or automatic synchronization are included.
+Keep the existing architecture-design skill responsible for the interview, High-Level Design and Low-Level Design. Use this complementary skill to normalize its output, publish selected views, and verify diagrams. No changes to shared standards or automatic synchronization are included.

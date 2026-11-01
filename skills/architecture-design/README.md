@@ -1,6 +1,6 @@
 # Architecture Design
 
-A Claude Code skill for **concept or brief → architecture interview → HLD/LLD → implementation handoff**. It covers Structure → Sequence → Contracts → Implementation, with explicit decisions and resumable checkpoints.
+A Claude Code skill for **concept or brief → architecture interview → High-Level Design/Low-Level Design → implementation handoff**. It covers Structure → Sequence → Contracts → Implementation, with explicit decisions and resumable checkpoints.
 
 ## Install in Claude Code
 

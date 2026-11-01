@@ -18,7 +18,7 @@ Source: architecture-framework-v2(1).zip (2026-10-31). Compare reusable content 
 | Reusable/project repository separation | Root README and skills/architecture-design/README.md; project output stays outside this repository |
 | External sibling templates dependency | Templates now bundled inside the skill for autonomous installation |
 | Old five-step labels | Replaced by the agreed Structure → Sequence → Contracts → Implementation |
-| HLD/LLD filenames and terms | Written as high level design / low level design |
+| High-Level Design/Low-Level Design filenames and terms | Written as High-Level Design / Low-Level Design |
 | Old architect-design name | Renamed architecture-design |
 | Orchestration and context recovery | Optional delegation reference and Haiku/Opus agent configurations retained |
 | Lucidchart URL retrieval | lucidchart-to-brief now explicitly uses configured MCP before export fallback |
