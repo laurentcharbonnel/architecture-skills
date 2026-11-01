@@ -5,6 +5,7 @@ Concise, interview-driven skills for Claude Code. Keep reusable methods here and
 | Skill | Purpose |
 | --- | --- |
 | architecture-design | Turn a concept or brief into implementation-ready architecture through Structure → Sequence → Contracts → Implementation. |
+| [markdown-to-lucid](docs/markdown-to-lucid.md) | Normalize external documentation into canonical Markdown and create matching editable Lucid C1/C2/C3 and sequence diagrams with fidelity checks. |
 | lucidchart-to-brief | Read a Lucidchart URL through the configured MCP and turn the business diagram into a factual brief and open questions; do not invent technical architecture. |
 
 ## Install for your user (Linux/macOS)
@@ -17,10 +18,11 @@ cd architecture-skills
 mkdir -p ~/.claude/skills
 cp -R skills/architecture-design ~/.claude/skills/
 cp -R skills/lucidchart-to-brief ~/.claude/skills/
+cp -R skills/markdown-to-lucid ~/.claude/skills/
 ```
 
-If either destination already exists, compare or back it up before copying.
-Open Claude Code in your project and invoke `/architecture-design` or `/lucidchart-to-brief`.
+If a destination already exists, compare or back it up before copying.
+Open Claude Code in your project and invoke `/architecture-design`, `/lucidchart-to-brief` or `/markdown-to-lucid`.
 To update, run `git pull --ff-only` in this clone and repeat the copies after reviewing local changes.
 For project-only installation, copy into the project's `.claude/skills/` instead.
 
@@ -29,6 +31,12 @@ Optional delegation: copy the two files in `claude-agents/` into `~/.claude/agen
 ## Lucidchart prerequisite
 
 Configure and authorize your Lucidchart MCP in Claude Code before passing a document URL. The skill discovers its actual read tools; it does not assume server-specific names or install/authenticate a server. A supplied export is a fallback when access or capabilities are insufficient.
+
+## Markdown to Lucid
+
+Use `/markdown-to-lucid Normalize docs/external-spec.md into docs/architecture.md using the bundled template` to prepare traceable Markdown. Then request `/markdown-to-lucid Create the C1 and C2 views from docs/architecture.md in Lucid` to publish selected views and verify their fidelity.
+
+Start from the [reusable Markdown template](skills/markdown-to-lucid/assets/architecture-template.md). See the [installation, MCP setup and usage guide](docs/markdown-to-lucid.md) and [validation results and limits](docs/markdown-to-lucid-validation.md). The compact entry point loads references per operation; the long example and Python source are not loaded by default. The Lucid connection is configured separately.
 
 ## Architecture resources and project separation
 
