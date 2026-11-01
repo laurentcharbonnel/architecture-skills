@@ -1,6 +1,6 @@
 # Architecture Skills
 
-Reusable Claude Code skills for architecture work. Keep reusable methods, generic design patterns and artifact templates here; project specifications stay in their own repositories. Enterprise standards and platform catalogs belong in a separate, authorized enterprise repository.
+Reusable skills for architecture work and rapid prototyping with Claude Code and Codex. Keep reusable methods, generic design patterns and artifact templates here; project specifications stay in their own repositories. Enterprise standards and platform catalogs belong in a separate, authorized enterprise repository.
 
 ## Skills
 
@@ -9,10 +9,27 @@ Reusable Claude Code skills for architecture work. Keep reusable methods, generi
 | [architecture-design](skills/architecture-design/README.md) | Start a New Design interview or reuse existing documentation with Existing Design, through structure, sequences, contracts and implementation handoff. |
 | [lucid-to-brief](skills/lucid-to-brief/README.md) | Extract a factual architecture input brief from a Lucidchart diagram or supplied export. |
 | [architecture-to-lucid](skills/architecture-to-lucid/README.md) | Consume shared canonical Architecture Markdown (normalize other inputs once) and create matching editable Lucid C1/C2/C3 and sequence diagrams. |
+| [rapid-prototype](skills/rapid-prototype/SKILL.md) | Quickly test a technical hypothesis or explore an interface, user flow, or simulation with a minimal interactive prototype. |
 
-Each skill's README contains its installation, prerequisites, examples, resources and validation limits. Copy whole skill folders to preserve resources. Install architecture-design alongside architecture-to-lucid: it reuses that sibling's schema, template and validator; the interview itself needs no Lucid connection.
+The architecture skills' READMEs cover installation, prerequisites, examples, resources and validation limits. Copy whole skill folders to preserve resources. Install architecture-design alongside architecture-to-lucid: it reuses that sibling's schema, template and validator; the interview itself needs no Lucid connection.
 
 Use **Existing Design** when a topic is already documented: bounded source intake, a short gap analysis, then C1/C2 validation before deeper artifacts. Original sources stay in place; facts, inferences and gaps remain explicit. See the [usage example](skills/architecture-design/README.md#2-existing-design--reuse-architecture-already-documented).
+
+## Rapid prototyping
+
+`rapid-prototype` is independent of `architecture-design` and needs no sibling skill. Both modes follow **Idea → Minimal Scope → Build → Test → Decide**, with minimal reading, dependencies, files and token use. It stops when the hypothesis is sufficiently tested and reports limitations and optional next steps.
+
+Copy `skills/rapid-prototype/` into your tool's skill directory (for example, `.claude/skills/` for Claude Code or `.agents/skills/` for Codex). Its single `SKILL.md` contains the complete instructions.
+
+Examples in Claude Code:
+
+```text
+/rapid-prototype Technical POC: In this repository, check whether the existing CSV parser handles quoted multiline fields. Add the smallest runnable example and one focused test.
+
+/rapid-prototype Visual Prototype: From scratch, explore a two-step appointment booking flow with local sample data in a minimal interactive prototype.
+```
+
+In Codex, use `$rapid-prototype` with the same mode and request. Either mode can start from scratch or use an existing repository. Only a prototype/code and a brief README or test result, when useful, are expected; production architecture is outside this workflow.
 
 ## Shared canonical architecture
 
@@ -32,6 +49,6 @@ Short human `design-doc.md` documents explain C1/C2 and C3/interactions at their
 
 ## Repository conventions
 
-`SKILL.md` contains runtime instructions. `README.md` explains installation and use to people. `references/` holds detailed operational guidance; `assets/` holds reusable templates and examples; `scripts/` holds deterministic helpers when needed.
+`SKILL.md` contains runtime instructions. `README.md`, when needed, explains installation and use to people. `references/` holds detailed operational guidance; `assets/` holds reusable templates and examples; `scripts/` holds deterministic helpers when needed.
 
 Before publishing, check frontmatter, names, local links and resource paths, then run relevant helpers. Structural checks do not establish Claude Code behavior, live MCP access or measured token savings. Keep these limits explicit.
