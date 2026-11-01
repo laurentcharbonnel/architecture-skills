@@ -17,7 +17,14 @@ Keep the architect in control. Converse in the user's language; write artifacts 
 
 ## Architecture and evidence
 
-C1/C2 form the high level design; C3 begins the low level design. Establish responsibilities, boundaries, dependencies and logical information flows before detailed contracts. Elements, relationships, views and sequences belong in their owning canonical model; overviews explain them through short prose and derived diagrams. Create optional component, contract and orchestrator artifacts only when they answer a concrete implementation question; never create a separate `sequences/` artifact. Derive useful Mermaid previews during the interview using [rendering guidance](references/canonical-rendering.md); update Markdown first, then regenerate affected previews. Mermaid, Lucid and extracted JSON are disposable projections, never alternative architecture definitions. Do not force a code diagram or internal class layout.
+C1/C2 form the high level design; C3 begins the low level design. Establish responsibilities, boundaries, dependencies and logical information flows before detailed contracts. Elements, relationships, views and sequences belong in their owning canonical model; overviews explain them through short prose and derived diagrams. Create optional component, contract and orchestrator artifacts only when they answer a concrete implementation question; never create a separate `sequences/` artifact. Use [rendering guidance](references/canonical-rendering.md) with the execution timing below. Mermaid, Lucid and extracted JSON are disposable projections, never alternative architecture definitions. Do not force a code diagram or internal class layout.
+
+- During interview back-and-forth, incrementally edit only affected records in the structured canonical model; do not regenerate Mermaid or human documents at every exchange.
+- On validation of an existing phase/checkpoint, synchronize affected Mermaid diagrams and `overview.md` explanations from the canonical model.
+- On an explicit preview request, generate only the requested diagram from the current canonical model.
+- When revisiting a decision, update only impacted canonical records and dependent artifacts, applying the same synchronization timing.
+
+Keep Structure → Sequence → Contracts → Implementation unchanged; add no steps, files or Proposed/Accepted/Published lifecycle states. Preserve human-readable overviews, agent-readable canonical models and the shared c4-markdown-to-c4-lucid schema.
 
 Offer team review after C2, before C3. Record unresolved high level decisions and downstream risks; provisional continuation remains allowed. Preserve source evidence and approved standards; do not invent technologies or enterprise defaults. Agree a mapping before moving existing specifications or creating parallel artifacts. Generate code only if separately requested.
 
