@@ -1,9 +1,9 @@
 ---
-name: lucidchart-to-brief
+name: lucid-to-brief
 description: Extract a concise factual architecture input brief from a Lucidchart URL via the configured Lucidchart MCP, or a supplied export, screenshot or equivalent process diagram, using a short interview to resolve ambiguity.
 ---
 
-# Lucidchart to Brief
+# Lucid to Brief
 
 Converse in the user's language; produce an English Markdown brief for architecture-design or independent use. Preserve business meaning; do not redesign the system.
 

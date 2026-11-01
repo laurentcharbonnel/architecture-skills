@@ -7,7 +7,7 @@ Reusable Claude Code skills for architecture work. Keep reusable methods, generi
 | Skill | Purpose |
 | --- | --- |
 | [architecture-design](skills/architecture-design/README.md) | Guide architecture interviews through structure, sequences, contracts and implementation handoff. |
-| [lucidchart-to-brief](skills/lucidchart-to-brief/README.md) | Extract a factual architecture input brief from a Lucidchart diagram or supplied export. |
+| [lucid-to-brief](skills/lucid-to-brief/README.md) | Extract a factual architecture input brief from a Lucidchart diagram or supplied export. |
 | [c4-markdown-to-c4-lucid](skills/c4-markdown-to-c4-lucid/README.md) | Normalize documentation into canonical C4 Markdown and create matching editable Lucid diagrams. |
 
 Each skill's README contains its installation, prerequisites, examples, resources and validation limits. Copy the whole skill folder to preserve its bundled resources.

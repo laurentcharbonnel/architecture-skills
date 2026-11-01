@@ -1,4 +1,4 @@
-# Lucidchart to Brief
+# Lucid to Brief
 
 A Claude Code skill for **Lucidchart diagram → evidence-backed Markdown brief → architecture input**. Preserve observed business meaning, separate interpretation from facts and record unresolved questions.
 
@@ -10,7 +10,7 @@ Clone the repository if needed:
 git clone https://github.com/laurentcharbonnel/architecture-skills.git
 cd architecture-skills
 mkdir -p ~/.claude/skills
-cp -R skills/lucidchart-to-brief ~/.claude/skills/
+cp -R skills/lucid-to-brief ~/.claude/skills/
 ```
 
 Run the copy from the repository root. Compare or back up an existing destination first. For project-only installation, copy the folder into the project's `.claude/skills/` instead. To update, run `git pull --ff-only` in the clone and repeat the copy after reviewing local changes. [Claude Code skills](https://code.claude.com/docs/en/skills).
@@ -40,19 +40,19 @@ A supplied export or screenshot can be read without MCP; the brief must state wh
 Replace `<Lucidchart URL>` with the source link:
 
 ```text
-/lucidchart-to-brief Read <Lucidchart URL> through the configured MCP and prepare docs/brief.md. Preserve source labels, boundaries and directed interactions. List evidence and uncertainties; do not redesign the system.
+/lucid-to-brief Read <Lucidchart URL> through the configured MCP and prepare docs/brief.md. Preserve source labels, boundaries and directed interactions. List evidence and uncertainties; do not redesign the system.
 ```
 
 ### 2. Use a supplied export
 
 ```text
-/lucidchart-to-brief Extract docs/process-export.pdf into docs/brief.md. Distinguish readable observations from interpretations and state which connectors or labels cannot be verified.
+/lucid-to-brief Extract docs/process-export.pdf into docs/brief.md. Distinguish readable observations from interpretations and state which connectors or labels cannot be verified.
 ```
 
 ### 3. Resume after clarification
 
 ```text
-/lucidchart-to-brief Resume from interview/brief-state.md. Apply my answers to the affected brief sections and keep remaining ambiguities visible.
+/lucid-to-brief Resume from interview/brief-state.md. Apply my answers to the affected brief sections and keep remaining ambiguities visible.
 ```
 
 ## Resources and output

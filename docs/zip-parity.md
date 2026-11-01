@@ -21,7 +21,7 @@ Source: architecture-framework-v2(1).zip (2026-10-31). Compare reusable content 
 | High-Level Design/Low-Level Design filenames and terms | Written as High-Level Design / Low-Level Design |
 | Old architect-design name | Renamed architecture-design |
 | Orchestration and context recovery | Optional delegation reference and Haiku/Opus agent configurations retained |
-| Lucidchart URL retrieval | lucidchart-to-brief now explicitly uses configured MCP before export fallback |
+| Lucidchart URL retrieval | lucid-to-brief now explicitly uses configured MCP before export fallback |
 
 Restored missing bundled templates rather than expanding every session's core instructions. Added orchestrator and review templates for the later agreed workflow.
 Validation: relative links, names, required frontmatter and template coverage checked. Claude Code runtime and a live Lucidchart MCP are unavailable in this session; live behavior and token savings remain unmeasured.

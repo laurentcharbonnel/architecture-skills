@@ -19,7 +19,7 @@ Run the copy from the repository root. Compare or back up an existing destinatio
 
 Provide the project specifications path. Generic design patterns and artifact templates are bundled with this skill. When enterprise guidance is needed, provide access to an authorized enterprise GitHub repository containing standards and a platform catalog. The skill records its location once and applies approved rules by reference. It works without enterprise access, leaving enterprise choices unverified rather than inventing them. No technology or enterprise standard is pre-approved. Keep specifications and implementation repositories separate where project policy requires it.
 
-No MCP connection is required for the interview. To extract a Lucid source first, use [lucidchart-to-brief](../lucidchart-to-brief/README.md); to publish C4 views, use [c4-markdown-to-c4-lucid](../c4-markdown-to-c4-lucid/README.md).
+No MCP connection is required for the interview. To extract a Lucid source first, use [lucid-to-brief](../lucid-to-brief/README.md); to publish C4 views, use [c4-markdown-to-c4-lucid](../c4-markdown-to-c4-lucid/README.md).
 
 Optional agents are in [claude-agents/](../../claude-agents/). From the repository root:
 
@@ -66,4 +66,4 @@ Check frontmatter, resource links and installation structure. In Claude Code, ex
 
 ## Integration
 
-Accept the factual brief from `lucidchart-to-brief` as input. Keep architecture decisions here; request `c4-markdown-to-c4-lucid` separately to normalize and publish selected diagrams. Enterprise standards and the platform catalog stay in the authorized enterprise repository; generic patterns and artifact templates stay in this public skill.
+Accept the factual brief from `lucid-to-brief` as input. Keep architecture decisions here; request `c4-markdown-to-c4-lucid` separately to normalize and publish selected diagrams. Enterprise standards and the platform catalog stay in the authorized enterprise repository; generic patterns and artifact templates stay in this public skill.
