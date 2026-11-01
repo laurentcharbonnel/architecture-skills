@@ -17,7 +17,7 @@ Run the copy from the repository root. Compare or back up an existing destinatio
 
 ## Prerequisites
 
-For a Lucidchart URL, use the same connection as `c4-markdown-to-c4-lucid`.
+For a Lucidchart URL, use the same connection as `architecture-to-lucid`.
 
 Configure the Lucid MCP once in Claude Code:
 
@@ -71,4 +71,4 @@ Check frontmatter, resource links and installation structure. In Claude Code, ve
 
 ## Integration
 
-Pass the saved brief path to [architecture-design](../architecture-design/README.md) when requested. Extraction does not automatically start design or invent components, APIs or technologies. Use [c4-markdown-to-c4-lucid](../c4-markdown-to-c4-lucid/README.md) for the separate Markdown-to-diagram workflow.
+Pass the saved brief path to [architecture-design](../architecture-design/README.md) when requested. Extraction does not automatically start design or invent components, APIs or technologies. Use [architecture-to-lucid](../architecture-to-lucid/README.md) for the separate Markdown-to-diagram workflow.

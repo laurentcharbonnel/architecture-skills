@@ -1,4 +1,4 @@
-# C4 Markdown to C4 Lucid
+# Architecture to Lucid
 
 A compact Claude Code skill for **shared canonical Architecture Markdown v1 → editable Lucid C4 and sequence diagrams**, with one-time normalization for external documentation. Conversations can be in French; all professional artifacts are in English.
 
@@ -10,7 +10,7 @@ Clone the repository if needed:
 git clone https://github.com/laurentcharbonnel/architecture-skills.git
 cd architecture-skills
 mkdir -p ~/.claude/skills
-cp -R skills/c4-markdown-to-c4-lucid ~/.claude/skills/
+cp -R skills/architecture-to-lucid ~/.claude/skills/
 ```
 
 Run the copy from the repository root. Compare or back up an existing destination first. For project-only installation, copy the folder into the project's `.claude/skills/` instead. To update, run `git pull --ff-only` in the clone and repeat the copy after reviewing local changes. [Claude Code skills](https://code.claude.com/docs/en/skills).
@@ -32,7 +32,7 @@ No credentials are bundled, and the skill does not configure or authenticate an 
 ### 1. Normalize an external document
 
 ```text
-/c4-markdown-to-c4-lucid Normalize docs/external-spec.md into docs/architecture.md using the bundled template. Preserve source references, mark inferred structure Proposed and list missing information. Do not create Lucid documents yet.
+/architecture-to-lucid Normalize docs/external-spec.md into docs/architecture.md using the bundled template. Preserve source references, mark inferred structure Proposed and list missing information. Do not create Lucid documents yet.
 ```
 
 You can also copy [architecture-template.md](assets/architecture-template.md) and fill it yourself. The completed [domain-tasks-example.md](assets/domain-tasks-example.md) demonstrates C1, C2, a proposed logical C3 and a sequence with failure/retry branches.
@@ -40,7 +40,7 @@ You can also copy [architecture-template.md](assets/architecture-template.md) an
 ### 2. Create Lucid from the Markdown
 
 ```text
-/c4-markdown-to-c4-lucid Create the C1 and C2 views from docs/architecture.md in Lucid. Apply the convention, verify actual readback and visual output, and save the links and fidelity report.
+/architecture-to-lucid Create the C1 and C2 views from docs/architecture.md in Lucid. Apply the convention, verify actual readback and visual output, and save the links and fidelity report.
 ```
 
 Request C3 and sequence sections when needed. Missing details stay explicit; logical views need not select a stack. A plain request to normalize documentation does not publish it.
@@ -48,7 +48,7 @@ Request C3 and sequence sections when needed. Missing details stay explicit; log
 ### 3. Review a manual change
 
 ```text
-/c4-markdown-to-c4-lucid Compare the saved architecture.md and Lucid mapping with the current diagrams. Report changes, then update the Markdown to reflect my edits.
+/architecture-to-lucid Compare the saved architecture.md and Lucid mapping with the current diagrams. Report changes, then update the Markdown to reflect my edits.
 ```
 
 ## Resources and output
@@ -70,9 +70,9 @@ Token savings depend on the source and tool responses; this is not a fixed token
 Python 3.9+; standard library only. From the repository root:
 
 ```bash
-python3 skills/c4-markdown-to-c4-lucid/scripts/validate_markdown.py skills/c4-markdown-to-c4-lucid/assets/domain-tasks-example.md
-python3 skills/c4-markdown-to-c4-lucid/scripts/validate_markdown.py docs/architecture.md --json > docs/architecture-model.json
-python3 skills/c4-markdown-to-c4-lucid/scripts/test_validate_markdown.py
+python3 skills/architecture-to-lucid/scripts/validate_markdown.py skills/architecture-to-lucid/assets/domain-tasks-example.md
+python3 skills/architecture-to-lucid/scripts/validate_markdown.py docs/architecture.md --json > docs/architecture-model.json
+python3 skills/architecture-to-lucid/scripts/test_validate_markdown.py
 ```
 
 See [recorded validation results](VALIDATION.md). The blank template intentionally fails until populated. The helper checks structural consistency, not business correctness or Lucid renderability. Native sequence source must be read back because generic fetch was observed to omit actor/database interactions. Fidelity is assessed separately from visual quality.

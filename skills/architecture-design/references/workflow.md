@@ -4,7 +4,7 @@ Read only the section needed for the current phase. Keep outputs in the project 
 
 ## Project output structure
 
-Use this structure in the project specifications repository. Both `architecture.md` files use the shared [Architecture Markdown v1 schema](../../c4-markdown-to-c4-lucid/references/markdown-format.md) and [template](../../c4-markdown-to-c4-lucid/assets/architecture-template.md); create each only when its design level is needed:
+Use this structure in the project specifications repository. Both `architecture.md` files use the shared [Architecture Markdown v1 schema](../../architecture-to-lucid/references/markdown-format.md) and [template](../../architecture-to-lucid/assets/architecture-template.md); create each only when its design level is needed:
 ```text
 high-level-design/
   overview.md

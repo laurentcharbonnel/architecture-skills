@@ -1,9 +1,9 @@
 ---
-name: c4-markdown-to-c4-lucid
+name: architecture-to-lucid
 description: Normalize architecture documentation into compact Markdown and create matching editable Lucid C1, C2, C3 and sequence diagrams. Use for Markdown-to-Lucid conversion and fidelity checks.
 ---
 
-# C4 Markdown to C4 Lucid
+# Architecture to Lucid
 
 Converse in the user's language; write artifacts and diagram labels in English. Complement the architecture-design interview rather than repeating it.
 

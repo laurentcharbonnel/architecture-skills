@@ -1,6 +1,6 @@
 # One source, derived renderings
 
-Read the existing [Architecture Markdown v1 schema](../../c4-markdown-to-c4-lucid/references/markdown-format.md) before editing architecture records. Start from its [single template](../../c4-markdown-to-c4-lucid/assets/architecture-template.md); do not copy the schema or invent an interview-specific format.
+Read the existing [Architecture Markdown v1 schema](../../architecture-to-lucid/references/markdown-format.md) before editing architecture records. Start from its [single template](../../architecture-to-lucid/assets/architecture-template.md); do not copy the schema or invent an interview-specific format.
 
 ## Interview update cycle
 
@@ -8,7 +8,7 @@ Read the existing [Architecture Markdown v1 schema](../../c4-markdown-to-c4-luci
 2. Write supported answers/proposals into the canonical tables or sequence sections. Cite brief/specification locators or persisted interview decisions in Sources. Use Proposed for inferences, Open for unresolved choices, Confirmed only with evidence. Interview/review progress is not evidence by itself. Record material gaps under Open questions, with affected IDs.
 3. Validate with the existing helper, resolving its path from the sibling skill:
    ```bash
-   python3 ../c4-markdown-to-c4-lucid/scripts/validate_markdown.py /project/specifications/low-level-design/architecture.md
+   python3 ../architecture-to-lucid/scripts/validate_markdown.py /project/specifications/low-level-design/architecture.md
    ```
    The command above assumes this skill's directory as the working directory; otherwise resolve an absolute helper path. Python 3.9+, standard library only. Use `--json` only when useful for rendering; generated JSON is disposable and never edited as input. If unavailable, check manually and report that limit.
 4. Render useful affected views/scenarios into the appropriate HLD/LLD overview (or a useful component specification). Label every Mermaid block as derived and identify its canonical file, view/sequence ID and revision (commit when available, otherwise a checkpoint revision). Keep the checkpoint small: paths, IDs, revision and pending refreshes, not copies of tables or markup.
@@ -42,6 +42,6 @@ Do not turn an asynchronous call into a synchronous call or flatten branches to 
 
 ## Lucid handoff and edits
 
-Hand off each owning Markdown path/revision and its selected IDs to [c4-markdown-to-c4-lucid](../../c4-markdown-to-c4-lucid/SKILL.md) when publication is requested. It reads canonical tables and the original PlantUML directly, without re-normalizing interview output or consuming Mermaid. Mapping JSON, imports and exports contain rendering metadata, not independent architecture truth.
+Hand off each owning Markdown path/revision and its selected IDs to [architecture-to-lucid](../../architecture-to-lucid/SKILL.md) when publication is requested. It reads canonical tables and the original PlantUML directly, without re-normalizing interview output or consuming Mermaid. Mapping JSON, imports and exports contain rendering metadata, not independent architecture truth.
 
 For requested semantic edits from Mermaid/Lucid, compare against the canonical revision, reconcile collaborator changes, update Markdown first and refresh affected projections. Preserve unresolved conflicts explicitly; never silently overwrite newer canonical data. Report pending or unavailable rendering checks in the checkpoint.
