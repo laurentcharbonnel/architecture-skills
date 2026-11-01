@@ -8,9 +8,15 @@ Reusable Claude Code skills for architecture work. Keep reusable methods, generi
 | --- | --- |
 | [architecture-design](skills/architecture-design/README.md) | Guide architecture interviews through structure, sequences, contracts and implementation handoff. |
 | [lucid-to-brief](skills/lucid-to-brief/README.md) | Extract a factual architecture input brief from a Lucidchart diagram or supplied export. |
-| [c4-markdown-to-c4-lucid](skills/c4-markdown-to-c4-lucid/README.md) | Normalize documentation into canonical C4 Markdown and create matching editable Lucid diagrams. |
+| [c4-markdown-to-c4-lucid](skills/c4-markdown-to-c4-lucid/README.md) | Consume shared canonical C4 Markdown (normalize other inputs once) and create matching editable Lucid diagrams. |
 
-Each skill's README contains its installation, prerequisites, examples, resources and validation limits. Copy the whole skill folder to preserve its bundled resources.
+Each skill's README contains its installation, prerequisites, examples, resources and validation limits. Copy whole skill folders to preserve resources. Install architecture-design alongside c4-markdown-to-c4-lucid: it reuses that sibling's schema, template and validator; the interview itself needs no Lucid connection.
+
+## Shared canonical architecture
+
+`architecture-design` maintains one project Markdown file using the existing [Architecture Markdown v1 schema](skills/c4-markdown-to-c4-lucid/references/markdown-format.md) and [template](skills/c4-markdown-to-c4-lucid/assets/architecture-template.md). It derives Mermaid during the interview; `c4-markdown-to-c4-lucid` consumes the same file to render selected Lucid views/sequences. Elements, relationships and sequence PlantUML are defined once. Rendering JSON, mapping files and diagrams are derived outputs. Semantic edits return to Markdown before regeneration; there is no background synchronization.
+
+C1/C2 commentary and team review remain in `high-level-design/`; C3, detailed scenario commentary, contracts and implementation guidance remain in `low-level-design/`. They reference canonical IDs. Checkpoints retain the canonical path/revision, current IDs and pending work so resuming does not require loading every artifact.
 
 ## Shared principles
 

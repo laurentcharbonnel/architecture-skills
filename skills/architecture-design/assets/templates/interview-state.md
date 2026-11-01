@@ -2,6 +2,10 @@
 Phase: Structure | Sequence | Contracts | Implementation
 Design level: high level design | low level design
 Current focus:
+Canonical Markdown path / last validated revision:
+Current view / sequence IDs:
+Canonical validation errors or unavailable checks:
+Derived previews / pending Mermaid or Lucid refreshes:
 Project specifications path:
 Standards library path:
 Source brief / diagram revision:

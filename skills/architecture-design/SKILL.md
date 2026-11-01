@@ -10,13 +10,14 @@ Keep the architect in control. Converse in the user's language; write artifacts 
 ## Load only the selected workflow
 
 - **Start or resume:** locate the specifications and `interview/state.md`; ask for the project path only if unknown. Read the checkpoint first, then relevant linked artifacts. Continue its next action unless redirected; do not re-ask resolved questions.
+- **Canonical data:** before creating or changing structure/sequences, read the shared [Architecture Markdown v1 schema](../c4-markdown-to-c4-lucid/references/markdown-format.md) and reuse its [template](../c4-markdown-to-c4-lucid/assets/architecture-template.md). Maintain one project Markdown file (default `architecture.md`); record an existing agreed path in the checkpoint instead of creating a duplicate. The sibling skill supplies this contract and validator; Lucid access is not needed.
 - **Design or revise:** read only the relevant phase and output paths in [workflow.md](references/workflow.md). Use its linked template when creating the artifact. Work through Structure → Sequence → Contracts → Implementation; revisit upstream choices when evidence changes.
 - **Standards intake or conflict:** read [standards.md](references/standards.md). Locate the authorized enterprise repository for standards and platform catalog (ask once if needed) and save its location in the checkpoint. Generic design patterns and artifact templates stay bundled with this public skill. Use the [standard template](assets/templates/standard.md) for proposals. Apply approved standards by reference without asking again; require explicit approval to change the shared library.
 - **Delegate or hand off:** read [delegation.md](references/delegation.md) only when needed. Stay in the current agent for small tasks; do not silently change its model.
 
 ## Architecture and evidence
 
-C1/C2 form the high level design; C3 begins the low level design. Establish responsibilities, boundaries, dependencies and logical information flows before detailed contracts. Use Mermaid for useful structure and sequence diagrams. Do not force a code diagram or internal class layout.
+C1/C2 form the high level design; C3 begins the low level design. Establish responsibilities, boundaries, dependencies and logical information flows before detailed contracts. Elements, relationships, views and sequences belong only in the canonical Markdown. Derive useful Mermaid previews during the interview using [rendering guidance](references/canonical-rendering.md); update Markdown first, then regenerate affected previews. Mermaid, Lucid and extracted JSON are disposable projections, never alternative architecture definitions. Do not force a code diagram or internal class layout.
 
 Offer team review after C2, before C3. Record unresolved high level decisions and downstream risks; provisional continuation remains allowed. Preserve source evidence and approved standards; do not invent technologies or enterprise defaults. Agree a mapping before moving existing specifications or creating parallel artifacts. Generate code only if separately requested.
 
@@ -24,6 +25,6 @@ Offer team review after C2, before C3. Record unresolved high level decisions an
 
 Keep project outputs in the specifications repository. Update affected artifacts and dependants only. Record minimal ADRs when tradeoffs need traceability. Do not scan or reload the whole repository.
 
-After meaningful steps and before compaction or a fresh worker, save and verify `interview/state.md` using the [checkpoint template](assets/templates/interview-state.md): phase/component, decisions, artifact paths, standards, review status, open questions and next action. Do not rely on transcript history.
+After meaningful steps and before compaction or a fresh worker, save and verify `interview/state.md` using the [checkpoint template](assets/templates/interview-state.md): phase/component, canonical Markdown path and revision, selected view/sequence IDs, decisions, artifact paths, standards, review status, open questions and next action. Do not rely on transcript history.
 
 Finish when each artifact answers a concrete developer question; state unresolved blockers explicitly.

@@ -8,11 +8,11 @@ If disconnected, finish local Markdown/model and explain the missing connection.
 
 ## Create selected views
 
-Select exactly the listed elements/relations. Canvas IDs must be document-wide unique, e.g. `c2__task_manager`, while semantic IDs remain stable. Save returned document/page/item IDs, generator IDs and edit URLs in a small mapping JSON. Resume from that mapping rather than creating duplicate documents.
+Validate the existing canonical Markdown directly. Read selected Views rows and Sequence sections from that same file; use the original PlantUML for native sequences. Do not translate interview Mermaid back into a model or normalize architecture-design output again. Any JSON/Standard Import object is a disposable rendering payload. Select exactly the listed elements/relations. Canvas IDs must be document-wide unique, e.g. `c2__task_manager`, while semantic IDs remain stable. Save canonical Markdown path/revision, view/sequence and semantic IDs alongside returned document/page/item IDs, generator IDs and edit URLs in a small mapping JSON. This mapping tracks rendering identity, not independent element/relationship/sequence definitions. Resume from that mapping rather than creating duplicate documents.
 
 At C2/C3 put only focus children inside the boundary; contextual internal elements stay blue outside it. Discover supported editable person silhouettes/store symbols. Do not call a rectangular actor placeholder full visual conformity. Defaults: internal `#DBEAFE`, external `#E5E7EB`, text `#0F172A`, people `#155A91`; this encodes the agreed convention, not a corporate palette. Size text before placing shapes.
 
-Honor server routing for supplied Mermaid/SVG. Flat images do not satisfy editable C4 output. Native UML source-backed sequences are suitable when editing limitations are disclosed. Preserve participant order, types, aliases, arrow semantics, branches and notes.
+For standalone legacy Mermaid/SVG supplied without canonical Markdown, honor server routing; do not use this route for previews derived from an existing canonical file. Flat images do not satisfy editable C4 output. Native UML source-backed sequences are suitable when editing limitations are disclosed. Preserve participant order, types, aliases, arrow semantics, branches and notes.
 
 ## Verify
 
@@ -28,4 +28,4 @@ Save one report row per view: expected/actual counts, semantic differences, visu
 
 ## Edits and failures
 
-A timed-out creation may have succeeded: inspect/search before retrying. Preserve collaborator edits. Review manual changes against the saved model, then update Markdown only when requested. Ungrouped sequences may no longer match generator source; inspect the editing mode. Report deltas rather than repeating full documents.
+A timed-out creation may have succeeded: inspect/search before retrying. Preserve collaborator edits. Review manual changes against the canonical Markdown revision recorded in the mapping and the current source; derived JSON can assist comparison but is never authoritative. Update Markdown only when requested, reconcile conflicting collaborator changes, then regenerate affected Lucid views and mark interview Mermaid previews for refresh. Do not silently overwrite newer source or maintain edits only in a rendering. Ungrouped sequences may no longer match generator source; inspect the editing mode. Report deltas rather than repeating full documents.

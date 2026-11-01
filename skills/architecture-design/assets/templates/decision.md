@@ -6,4 +6,4 @@ Decision:
 Rationale:
 Consequences:
 Standard reference: <ID/path and version, or none>
-Affected artifacts:
+Affected canonical IDs and artifacts:

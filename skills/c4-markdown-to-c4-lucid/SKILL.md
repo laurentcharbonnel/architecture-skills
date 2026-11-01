@@ -9,7 +9,8 @@ Converse in the user's language; write artifacts and diagram labels in English. 
 
 ## Load only the selected workflow
 
-- **Normalize documentation:** use [assets/architecture-template.md](assets/architecture-template.md) and [references/markdown-format.md](references/markdown-format.md). Save traceable Markdown; publishing requires a creation request.
+- **Existing canonical Markdown (including architecture-design output):** reuse its path and IDs directly; validate without re-normalizing or creating a parallel canonical file.
+- **Normalize other documentation:** use [assets/architecture-template.md](assets/architecture-template.md) and [references/markdown-format.md](references/markdown-format.md). Save traceable Markdown; publishing requires a creation request.
 - **Create Lucid:** validate the Markdown, then read [references/lucid-workflow.md](references/lucid-workflow.md). A clear creation request is sufficient authorization; respect actual tool access controls.
 - **Review edits/fidelity:** use the saved mapping and workflow reference. Integrate edits into Markdown when requested; otherwise propose a diff.
 
@@ -17,14 +18,14 @@ Load [assets/domain-tasks-example.md](assets/domain-tasks-example.md) only when 
 
 ## Canonical source
 
-Tables define elements, relations and selected views once. Sequences use source markup. Stable IDs survive renames. Distinguish Confirmed facts, Proposed design and Open decisions. Do not invent technologies, boundaries or behavior. Apply existing project standards without changing them during conversion.
+Use exactly [Architecture Markdown v1](references/markdown-format.md), shared with architecture-design. Tables define elements, relations and selected views once. Sequences use the canonical PlantUML sections in that same file. Do not derive Lucid from interview Mermaid or introduce a competing canonical model. Normalization is only for input not already in this schema. Stable IDs survive renames. Distinguish Confirmed facts, Proposed design and Open decisions. Do not invent technologies, boundaries or behavior. Apply existing project standards without changing them during conversion.
 
 Run the helper, resolving its path from this skill:
 ```bash
 python3 scripts/validate_markdown.py architecture.md
 python3 scripts/validate_markdown.py architecture.md --json > architecture-model.json
 ```
-Python 3.9+, no dependencies/network. The model is derived, not a second source. If Python is unavailable, validate manually and disclose the limitation.
+Python 3.9+, no dependencies/network. The JSON is a disposable extraction for rendering, never a second source or an input edited independently. Keep the original Markdown path/revision in the rendering mapping. If Python is unavailable, validate manually and disclose the limitation.
 
 ## Rendering and verification
 

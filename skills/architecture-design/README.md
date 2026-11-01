@@ -10,10 +10,10 @@ Clone the repository if needed:
 git clone https://github.com/laurentcharbonnel/architecture-skills.git
 cd architecture-skills
 mkdir -p ~/.claude/skills
-cp -R skills/architecture-design ~/.claude/skills/
+cp -R skills/architecture-design skills/c4-markdown-to-c4-lucid ~/.claude/skills/
 ```
 
-Run the copy from the repository root. Compare or back up an existing destination first. For project-only installation, copy the folder into the project's `.claude/skills/` instead. To update, run `git pull --ff-only` in the clone and repeat the copy after reviewing local changes. [Claude Code skills](https://code.claude.com/docs/en/skills).
+Run the copy from the repository root. Compare or back up an existing destination first. Install both sibling folders together: architecture-design reuses the existing schema, template and validator from c4-markdown-to-c4-lucid. For project-only installation, copy both folders into the project's `.claude/skills/` instead. To update, run `git pull --ff-only` in the clone and repeat the copy after reviewing local changes. [Claude Code skills](https://code.claude.com/docs/en/skills).
 
 ## Prerequisites
 
@@ -52,7 +52,9 @@ Compare existing destinations before copying. For project scope, use `.claude/ag
 
 ## Resources and output
 
-The [workflow reference](references/workflow.md) defines output paths and phase guidance. C1/C2 belong in `high-level-design/overview.md`, with team feedback in `high-level-design/review.md`. C3 and implementation details belong in `low-level-design/components/`, `sequences/`, `contracts/` and `orchestrators/`. Store ADRs in `decisions/` and progress in `interview/state.md`. Create only useful artifacts; agree a mapping before migrating existing specifications.
+The [workflow reference](references/workflow.md) defines output paths and phase guidance. The shared [schema](../c4-markdown-to-c4-lucid/references/markdown-format.md) and [template](../c4-markdown-to-c4-lucid/assets/architecture-template.md) define a single project `architecture.md` (or an existing agreed path). C1/C2 commentary and links to canonical view IDs belong in `high-level-design/overview.md`, with team feedback in `high-level-design/review.md`. C3 view links, detailed scenario commentary and implementation details belong in `low-level-design/components/`, `sequences/`, `contracts/` and `orchestrators/`. Store ADRs in `decisions/` and progress in `interview/state.md`. Create only useful artifacts; agree a mapping before migrating existing specifications.
+
+Generate useful Mermaid previews from canonical tables and sequence PlantUML during the interview, following [rendering guidance](references/canonical-rendering.md). Never maintain separate Mermaid architecture definitions.
 
 Use the bundled [templates](assets/templates/), [standards guidance](references/standards.md) and optional [delegation protocol](references/delegation.md) for the relevant operation. Team review after C2 is recommended; provisional continuation remains possible. Code generation requires a separate request.
 
@@ -62,8 +64,15 @@ Read the checkpoint first and load only relevant artifacts, phase guidance and t
 
 ## Validation and limits
 
-Check frontmatter, resource links and installation structure. In Claude Code, exercise start, resume and changed-decision scenarios on a representative project before relying on the skill at work. Structural checks do not prove interview quality, implementation readiness or token savings. No exact context monitor, automatic restart or automatic main-session model switching is provided.
+Check frontmatter, resource links and the paired installation structure. Validate the same canonical Markdown with the existing helper, from the repository root:
+
+```bash
+python3 skills/c4-markdown-to-c4-lucid/scripts/validate_markdown.py /project/specifications/architecture.md
+python3 skills/c4-markdown-to-c4-lucid/scripts/test_validate_markdown.py
+```
+
+The blank template is intentionally incomplete. During discovery, checkpoint unresolved errors; do not invent design to pass validation. Schema validation does not prove Mermaid rendering or semantic fidelity; compare derived previews against selected canonical IDs and original sequence semantics. In Claude Code, exercise start, resume and changed-decision scenarios on a representative project before relying on the skill at work. Structural checks do not prove interview quality, implementation readiness or token savings. No exact context monitor, automatic restart or automatic main-session model switching is provided.
 
 ## Integration
 
-Accept the factual brief from `lucid-to-brief` as input. Keep architecture decisions here; request `c4-markdown-to-c4-lucid` separately to normalize and publish selected diagrams. Enterprise standards and the platform catalog stay in the authorized enterprise repository; generic patterns and artifact templates stay in this public skill.
+Accept the factual brief from `lucid-to-brief` as input. Keep architecture decisions here and maintain the shared canonical Markdown throughout the interview. Request `c4-markdown-to-c4-lucid` separately to validate and publish selected views/sequences from that exact path/revision, without a normalization pass. Requested diagram edits update canonical Markdown first, then affected previews; mappings and JSON remain derived. Enterprise standards and the platform catalog stay in the authorized enterprise repository; generic patterns and artifact templates stay in this public skill.

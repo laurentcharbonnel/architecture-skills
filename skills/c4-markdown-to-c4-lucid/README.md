@@ -1,6 +1,6 @@
 # C4 Markdown to C4 Lucid
 
-A compact Claude Code skill for **external documentation → structured Markdown → editable Lucid C4 and sequence diagrams**. Conversations can be in French; all professional artifacts are in English.
+A compact Claude Code skill for **shared canonical Architecture Markdown v1 → editable Lucid C4 and sequence diagrams**, with one-time normalization for external documentation. Conversations can be in French; all professional artifacts are in English.
 
 ## Install in Claude Code
 
@@ -53,11 +53,11 @@ Request C3 and sequence sections when needed. Missing details stay explicit; log
 
 ## Resources and output
 
-The [Markdown schema](references/markdown-format.md) defines the canonical tables and defaults. The [Lucid workflow](references/lucid-workflow.md) defines creation, mappings and fidelity checks. Save the canonical Markdown, mapping and fidelity report in the project. Read the completed example only when useful.
+The [Markdown schema](references/markdown-format.md) defines the canonical tables, sequence PlantUML and defaults shared with architecture-design. Reuse existing interview Markdown directly, with its stable IDs; no separate normalization, inventory or sequence model. Mermaid previews and extracted JSON are derived outputs. The [Lucid workflow](references/lucid-workflow.md) defines creation, mappings and fidelity checks. Save the canonical Markdown, mapping and fidelity report in the project. Read the completed example only when useful.
 
 ## Token efficiency
 
-- The entry point is about 400 words; detailed references load by operation.
+- Detailed references load by operation; the entry point only routes the work.
 - Element definitions are shared across views, with stable ID lists for each view.
 - Optional columns and document defaults avoid repeated status/source/technology cells.
 - Validation runs as a Python script; its code and the long example need not enter model context.
@@ -79,4 +79,4 @@ See [recorded validation results](VALIDATION.md). The blank template intentional
 
 ## Integration
 
-Keep the existing architecture-design skill responsible for the interview, High-Level Design and Low-Level Design. Use this complementary skill to normalize its output, publish selected views, and verify diagrams. No changes to shared standards or automatic synchronization are included.
+Keep the existing architecture-design skill responsible for the interview, High-Level Design and Low-Level Design. Use this complementary skill to consume its canonical Markdown directly, publish selected views, and verify diagrams. The interview needs this folder installed alongside architecture-design for its shared schema/template/validator, but no Lucid connection until publication. Normalization is only needed for other input formats. Semantic edits update Markdown first and refresh affected renderings; there is no automatic synchronization or change to shared standards.

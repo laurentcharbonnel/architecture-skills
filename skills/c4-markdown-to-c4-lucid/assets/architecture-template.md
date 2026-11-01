@@ -10,7 +10,7 @@
 
 ## Purpose and scope
 
-Describe the goal and system boundary in English. Default mode: logical. Default status: Proposed. Add Status/Sources columns only when rows need overrides.
+Describe the goal and system boundary in English. This is the shared canonical source for architecture-design, derived Mermaid previews and Lucid. Keep one project copy; high-level/low-level commentary links to its view/sequence IDs. Default mode: logical. Default status: Proposed. Add Status/Sources columns only when rows need overrides.
 
 ## Sources
 
