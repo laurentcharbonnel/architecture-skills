@@ -2,7 +2,9 @@
 Phase: Structure | Sequence | Contracts | Implementation
 Design level: high level design | low level design
 Current focus:
-Canonical Markdown path / last validated revision:
+HLD canonical path / last validated revision:
+LLD canonical path / last validated revision:
+HLD context references in LLD / pending reconciliation:
 Current view / sequence IDs:
 Canonical validation errors or unavailable checks:
 Derived previews / pending Mermaid or Lucid refreshes:

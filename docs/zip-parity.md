@@ -6,7 +6,7 @@ Source: architecture-framework-v2(1).zip (2026-10-31). Compare reusable content 
 | --- | --- |
 | Interview, 3–4 questions, approved answers, English artifacts | skills/architecture-design/SKILL.md |
 | C1 scope and C2 containers / logical information flow | Structure, references/workflow.md; assets/templates/high-level-overview.md |
-| C3 components and interactions | Structure then Sequence; component.md and flow.md templates |
+| C3 components and interactions | Structure then Sequence; low-level-overview.md, optional component.md and shared canonical sequence sections |
 | Technical API/event/data contracts | Contracts; workflow reference and contract.yaml skeleton |
 | Implementation readiness, no default code generation | Implementation and component.md; code only by separate request |
 | Recommended team review, nonblocking continuation | SKILL.md and references/workflow.md; review.md template; checkpoint review status/feedback |
@@ -16,7 +16,7 @@ Source: architecture-framework-v2(1).zip (2026-10-31). Compare reusable content 
 | Minimal decision record | decision.md template |
 | Resumable interview | interview-state.md template |
 | Reusable/project repository separation | Root README and skills/architecture-design/README.md; project output stays outside this repository |
-| External sibling templates dependency | Generic interview templates bundled; architecture-design now explicitly reuses the c4-markdown-to-c4-lucid sibling schema/template/validator, installed together, to keep one canonical format |
+| External sibling templates dependency | Generic interview templates bundled; architecture-design now explicitly reuses the c4-markdown-to-c4-lucid sibling schema/template/validator, installed together, to keep one canonical format across HLD/LLD models |
 | Old five-step labels | Replaced by the agreed Structure → Sequence → Contracts → Implementation |
 | High-Level Design/Low-Level Design filenames and terms | Written as High-Level Design / Low-Level Design |
 | Old architect-design name | Renamed architecture-design |

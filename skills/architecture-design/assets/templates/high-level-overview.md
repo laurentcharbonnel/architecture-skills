@@ -1,5 +1,5 @@
 # High level design — <System>
-Canonical Markdown: <relative path and revision>
+Canonical Markdown: `architecture.md` — <revision>
 C1/C2 view IDs: <canonical IDs>
 ## Goals, scope and constraints
 ## Actors and system boundaries
@@ -11,5 +11,5 @@ C1/C2 view IDs: <canonical IDs>
 ## Architectural decisions and applied standards
 ## Risks, assumptions and open questions
 <!-- Link canonical Open questions IDs where they affect architecture. -->
-## Review status
-draft
+## Review and next decisions
+<!-- Link review.md or ADRs only when they exist; do not repeat their contents. -->

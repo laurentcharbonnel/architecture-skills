@@ -3,8 +3,8 @@ Status: provisional | validated
 Canonical Markdown: <relative path and revision>
 Component / C3 view IDs: <canonical IDs>
 ## Responsibility and boundary
-## Logical components
-<!-- Link canonical C3 view; useful Mermaid is derived and labeled with source/revision. Do not redefine structure here. -->
+## Design references
+<!-- Link architecture.md IDs and overview.md; keep additional implementation details only. Do not repeat the C3 explanation, inventory or sequence messages. -->
 ## Interfaces, owners and contract links
 ## Behavior and state transitions
 ## Failure handling and idempotency

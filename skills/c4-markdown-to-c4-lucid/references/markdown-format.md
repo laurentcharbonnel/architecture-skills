@@ -1,6 +1,6 @@
 # Architecture Markdown v1
 
-Use the template's level-two headings. One record per physical row; `<br>` for line breaks, `\|` for a pipe, `-` for empty optional values. IDs match `[A-Za-z][A-Za-z0-9_]*`, are globally unique and remain stable. Lists contain comma-separated IDs.
+Use the template's level-two headings. One record per physical row; `<br>` for line breaks, `\|` for a pipe, `-` for empty optional values. IDs match `[A-Za-z][A-Za-z0-9_]*`, identify the same semantic record across project models and remain stable. Allocate distinct IDs for distinct records; a referenced context element retains its owning ID. Lists contain comma-separated IDs.
 
 ## Defaults save repetition
 
@@ -36,6 +36,14 @@ Views explicitly list visible Elements and Relationships. Both edge endpoints mu
 Each `## Sequence: seq_id` section has a Field/Value table containing **Title, Participants, Status, Sources**, then one fenced `plantuml` block. Participants are global IDs used as aliases; display names match Elements. Declaration order controls participant order.
 
 The helper supports actor/participant/boundary/control/entity/database; arrows ->, -->, ->>, -->>; alt/else/end, loop, opt, par, critical, group; notes, activation, title/caption and autonumber. Explicitly declare participants and @startuml/@enduml. No includes/preprocessors. The helper checks structure; Lucid's live parser decides renderability. Preserve richer existing Mermaid/SVG using the appropriate server route, not a silent rewrite.
+
+## Design-level files and ownership
+
+Architecture-design uses `high-level-design/architecture.md` for C1/C2 and `low-level-design/architecture.md` for C3 and detailed sequences. Both use this exact schema and the same template; no import syntax or extra required fields. Standalone conversion may still use a single agreed canonical file.
+
+Each model is self-contained for the existing validator and renderer: include the System ID element, required parent chain, view endpoints, sequence participants and their evidence. HLD owns system/container context; LLD owns components, detailed relationships, C3 views and detailed sequences. Put each sequence in one owning file only; an overview can link it or embed a derived preview.
+
+When LLD needs HLD context, include only the necessary context rows with the same IDs and semantic values (Sources points to the owner). Add a Sources entry with the relative HLD model path, revision and owning IDs as Locator; reference it in the context rows’ Sources column. These rows are a dependent projection, not an independently editable definition. Keep both models’ System ID consistent. Maintain original evidence in the owning model. A shared element’s change is made in its owner, then propagated to dependent context rows before validation/rendering; record pending reconciliation in the checkpoint. The current helper validates one file at a time and does not resolve links or check cross-file consistency: compare shared IDs, context values and revisions explicitly. Follow links to an owning model for edits; do not merge the files into another maintained model.
 
 ## Normalize source material
 

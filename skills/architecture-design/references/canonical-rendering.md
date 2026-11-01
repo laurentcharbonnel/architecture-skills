@@ -4,14 +4,14 @@ Read the existing [Architecture Markdown v1 schema](../../c4-markdown-to-c4-luci
 
 ## Interview update cycle
 
-1. Resolve the canonical Markdown path from `interview/state.md` (default `architecture.md` in project specifications). For existing specifications, agree a mapping before migration; normalize only once if needed. Reuse conforming input directly.
+1. Resolve the owning model path/revision from `interview/state.md`: `high-level-design/architecture.md` for C1/C2, `low-level-design/architecture.md` for C3 and detailed sequences. Apply the shared schema’s context-reference rule before validating each file independently. For existing specifications, agree a mapping before migration; normalize only once if needed. Reuse conforming input directly.
 2. Write supported answers/proposals into the canonical tables or sequence sections. Cite brief/specification locators or persisted interview decisions in Sources. Use Proposed for inferences, Open for unresolved choices, Confirmed only with evidence. Interview/review progress is not evidence by itself. Record material gaps under Open questions, with affected IDs.
 3. Validate with the existing helper, resolving its path from the sibling skill:
    ```bash
-   python3 ../c4-markdown-to-c4-lucid/scripts/validate_markdown.py /project/specifications/architecture.md
+   python3 ../c4-markdown-to-c4-lucid/scripts/validate_markdown.py /project/specifications/low-level-design/architecture.md
    ```
    The command above assumes this skill's directory as the working directory; otherwise resolve an absolute helper path. Python 3.9+, standard library only. Use `--json` only when useful for rendering; generated JSON is disposable and never edited as input. If unavailable, check manually and report that limit.
-4. Render useful affected views/scenarios into the overview, component or flow document. Label every Mermaid block as derived and identify its canonical file, view/sequence ID and revision (commit when available, otherwise a checkpoint revision). Keep the checkpoint small: paths, IDs, revision and pending refreshes, not copies of tables or markup.
+4. Render useful affected views/scenarios into the appropriate HLD/LLD overview (or a useful component specification). Label every Mermaid block as derived and identify its canonical file, view/sequence ID and revision (commit when available, otherwise a checkpoint revision). Keep the checkpoint small: paths, IDs, revision and pending refreshes, not copies of tables or markup.
 5. Discuss the preview with the architect. Apply requested semantic changes to canonical Markdown first, validate and regenerate. Never recover architecture from a stale preview when canonical records exist.
 
 A newly copied blank template is intentionally incomplete. During initial discovery, keep unresolved validation errors explicit in the checkpoint; do not invent records to pass. Only claim a preview is validated when its canonical input passes. No Lucid publication from structurally invalid input. Regeneration is an agent workflow, not a background synchronization service.
@@ -42,6 +42,6 @@ Do not turn an asynchronous call into a synchronous call or flatten branches to 
 
 ## Lucid handoff and edits
 
-Hand off the same Markdown path/revision and selected IDs to [c4-markdown-to-c4-lucid](../../c4-markdown-to-c4-lucid/SKILL.md) when publication is requested. It reads canonical tables and the original PlantUML directly, without re-normalizing interview output or consuming Mermaid. Mapping JSON, imports and exports contain rendering metadata, not independent architecture truth.
+Hand off each owning Markdown path/revision and its selected IDs to [c4-markdown-to-c4-lucid](../../c4-markdown-to-c4-lucid/SKILL.md) when publication is requested. It reads canonical tables and the original PlantUML directly, without re-normalizing interview output or consuming Mermaid. Mapping JSON, imports and exports contain rendering metadata, not independent architecture truth.
 
 For requested semantic edits from Mermaid/Lucid, compare against the canonical revision, reconcile collaborator changes, update Markdown first and refresh affected projections. Preserve unresolved conflicts explicitly; never silently overwrite newer canonical data. Report pending or unavailable rendering checks in the checkpoint.

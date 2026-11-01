@@ -9,7 +9,7 @@ Converse in the user's language; write artifacts and diagram labels in English. 
 
 ## Load only the selected workflow
 
-- **Existing canonical Markdown (including architecture-design output):** reuse its path and IDs directly; validate without re-normalizing or creating a parallel canonical file.
+- **Existing canonical Markdown (including architecture-design output):** reuse each owning path and its IDs directly (HLD C1/C2; LLD C3/sequences); validate each supplied model without re-normalizing or creating a parallel canonical file. Apply the shared schema’s context-reference rule when both levels exist.
 - **Normalize other documentation:** use [assets/architecture-template.md](assets/architecture-template.md) and [references/markdown-format.md](references/markdown-format.md). Save traceable Markdown; publishing requires a creation request.
 - **Create Lucid:** validate the Markdown, then read [references/lucid-workflow.md](references/lucid-workflow.md). A clear creation request is sufficient authorization; respect actual tool access controls.
 - **Review edits/fidelity:** use the saved mapping and workflow reference. Integrate edits into Markdown when requested; otherwise propose a diff.
@@ -18,7 +18,7 @@ Load [assets/domain-tasks-example.md](assets/domain-tasks-example.md) only when 
 
 ## Canonical source
 
-Use exactly [Architecture Markdown v1](references/markdown-format.md), shared with architecture-design. Tables define elements, relations and selected views once. Sequences use the canonical PlantUML sections in that same file. Do not derive Lucid from interview Mermaid or introduce a competing canonical model. Normalization is only for input not already in this schema. Stable IDs survive renames. Distinguish Confirmed facts, Proposed design and Open decisions. Do not invent technologies, boundaries or behavior. Apply existing project standards without changing them during conversion.
+Use exactly [Architecture Markdown v1](references/markdown-format.md), shared with architecture-design. Each record has one owning model; necessary context rows follow the schema’s reference rule. Sequences use PlantUML sections once in their owning file. Track each selected view/sequence’s source path and revision. Do not derive Lucid from interview Mermaid or introduce a competing canonical model. Normalization is only for input not already in this schema. Stable IDs survive renames. Distinguish Confirmed facts, Proposed design and Open decisions. Do not invent technologies, boundaries or behavior. Apply existing project standards without changing them during conversion.
 
 Run the helper, resolving its path from this skill:
 ```bash

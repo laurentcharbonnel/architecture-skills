@@ -53,7 +53,7 @@ Request C3 and sequence sections when needed. Missing details stay explicit; log
 
 ## Resources and output
 
-The [Markdown schema](references/markdown-format.md) defines the canonical tables, sequence PlantUML and defaults shared with architecture-design. Reuse existing interview Markdown directly, with its stable IDs; no separate normalization, inventory or sequence model. Mermaid previews and extracted JSON are derived outputs. The [Lucid workflow](references/lucid-workflow.md) defines creation, mappings and fidelity checks. Save the canonical Markdown, mapping and fidelity report in the project. Read the completed example only when useful.
+The [Markdown schema](references/markdown-format.md) defines the canonical tables, sequence PlantUML and defaults shared with architecture-design. Reuse existing interview HLD/LLD models directly, with their stable IDs and owning paths/revisions; validate each independently and reconcile HLD context references as the schema describes; no separate normalization, inventory or sequence model. Mermaid previews and extracted JSON are derived outputs. The [Lucid workflow](references/lucid-workflow.md) defines creation, mappings and fidelity checks. Save the canonical Markdown, mapping and fidelity report in the project. Read the completed example only when useful.
 
 ## Token efficiency
 

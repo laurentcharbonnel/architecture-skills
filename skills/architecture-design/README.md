@@ -52,9 +52,26 @@ Compare existing destinations before copying. For project scope, use `.claude/ag
 
 ## Resources and output
 
-The [workflow reference](references/workflow.md) defines output paths and phase guidance. The shared [schema](../c4-markdown-to-c4-lucid/references/markdown-format.md) and [template](../c4-markdown-to-c4-lucid/assets/architecture-template.md) define a single project `architecture.md` (or an existing agreed path). C1/C2 commentary and links to canonical view IDs belong in `high-level-design/overview.md`, with team feedback in `high-level-design/review.md`. C3 view links, detailed scenario commentary and implementation details belong in `low-level-design/components/`, `sequences/`, `contracts/` and `orchestrators/`. Store ADRs in `decisions/` and progress in `interview/state.md`. Create only useful artifacts; agree a mapping before migrating existing specifications.
+**Human-readable:** `overview.md` explains the design briefly with useful, explained diagrams; `review.md` captures feedback and open decisions. Optional component/orchestrator specifications and minimal ADRs add implementation detail or rationale only when useful.
 
-Generate useful Mermaid previews from canonical tables and sequence PlantUML during the interview, following [rendering guidance](references/canonical-rendering.md). Never maintain separate Mermaid architecture definitions.
+**Machine/agent-readable:** each `architecture.md` is a structured canonical model using the same [schema](../c4-markdown-to-c4-lucid/references/markdown-format.md) and [template](../c4-markdown-to-c4-lucid/assets/architecture-template.md). Agents use its tables and sequence PlantUML to generate Mermaid/Lucid. `contracts/` holds machine-readable OpenAPI/event schemas; `interview/state.md` is the resume checkpoint.
+
+```text
+high-level-design/
+  overview.md          # short human explanation of C1/C2
+  architecture.md      # canonical C1/C2 model
+  review.md            # lightweight feedback and open decisions, when useful
+low-level-design/
+  overview.md          # short human explanation of C3 and interactions
+  architecture.md      # canonical C3 model and detailed sequences
+  components/          # optional component implementation specifications
+  contracts/           # optional OpenAPI and event schemas
+  orchestrators/       # optional states, transitions and behavior
+decisions/             # minimal ADRs when needed
+interview/state.md     # paths, revisions, decisions and next action
+```
+
+Create only useful files. Sequences live once inside the owning structured model; there is no separate `sequences/` artifact. Mermaid, Lucid and extracted JSON are derived outputs: change the canonical model first. Each model validates independently; necessary HLD context in LLD follows the shared schema’s reference rule. The [workflow](references/workflow.md) and [rendering guidance](references/canonical-rendering.md) define ownership and refresh behavior. Agree a mapping before migrating existing specifications.
 
 Use the bundled [templates](assets/templates/), [standards guidance](references/standards.md) and optional [delegation protocol](references/delegation.md) for the relevant operation. Team review after C2 is recommended; provisional continuation remains possible. Code generation requires a separate request.
 
@@ -64,10 +81,11 @@ Read the checkpoint first and load only relevant artifacts, phase guidance and t
 
 ## Validation and limits
 
-Check frontmatter, resource links and the paired installation structure. Validate the same canonical Markdown with the existing helper, from the repository root:
+Check frontmatter, resource links and the paired installation structure. Validate each existing canonical model with the existing helper, from the repository root:
 
 ```bash
-python3 skills/c4-markdown-to-c4-lucid/scripts/validate_markdown.py /project/specifications/architecture.md
+python3 skills/c4-markdown-to-c4-lucid/scripts/validate_markdown.py /project/specifications/high-level-design/architecture.md
+python3 skills/c4-markdown-to-c4-lucid/scripts/validate_markdown.py /project/specifications/low-level-design/architecture.md
 python3 skills/c4-markdown-to-c4-lucid/scripts/test_validate_markdown.py
 ```
 
@@ -75,4 +93,4 @@ The blank template is intentionally incomplete. During discovery, checkpoint unr
 
 ## Integration
 
-Accept the factual brief from `lucid-to-brief` as input. Keep architecture decisions here and maintain the shared canonical Markdown throughout the interview. Request `c4-markdown-to-c4-lucid` separately to validate and publish selected views/sequences from that exact path/revision, without a normalization pass. Requested diagram edits update canonical Markdown first, then affected previews; mappings and JSON remain derived. Enterprise standards and the platform catalog stay in the authorized enterprise repository; generic patterns and artifact templates stay in this public skill.
+Accept the factual brief from `lucid-to-brief` as input. Keep architecture decisions here and maintain the HLD/LLD canonical models in the shared format throughout the interview. Request `c4-markdown-to-c4-lucid` separately to validate and publish selected views/sequences from each owning model’s exact path/revision, without a normalization pass. Requested diagram edits update canonical Markdown first, then affected previews; mappings and JSON remain derived. Enterprise standards and the platform catalog stay in the authorized enterprise repository; generic patterns and artifact templates stay in this public skill.
