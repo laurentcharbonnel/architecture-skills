@@ -30,6 +30,24 @@ cp claude-agents/architecture-extract.md claude-agents/architecture-review.md ~/
 
 Compare existing destinations before copying. For project scope, use `.claude/agents/`. Check availability with `/agents`. Extraction uses Haiku; design review uses Opus when available. The skill works without these agents and does not switch the main session's model. [Claude Code subagents](https://code.claude.com/docs/en/sub-agents).
 
+## Quick Start — Existing Design
+
+After installation, open Claude Code in your project and replace `[topic]` and `[documentation path]` below. This prompt is self-contained; no ChatGPT access is needed.
+
+```text
+Use architecture-design in Existing Design mode for [topic].
+Analyze the existing documentation in [documentation path], following only links relevant to this topic. Reuse documented architecture and decisions with source references; distinguish facts, inferences and unresolved choices without inventing details. Preserve source files in place without moving or rewriting them, reuse conforming models, and agree a non-destructive output mapping if paths conflict.
+Start with high-level-design/architecture-model.md as the canonical C1/C2 model and high-level-design/design-doc.md as its short explanation with readable Mermaid C1/C2 diagrams. Keep views focused, labels short and main information flows clear; split crowded views.
+Identify only gaps that block these HLD artifacts. Ask at most 3–4 targeted questions for those blockers, reuse resolved answers and do not restart the full interview.
+Present the HLD for my validation and stop. Wait for my explicit validation before low-level design: C3, detailed sequences, contracts or implementation detail.
+```
+
+Short version (when the documentation location is already known):
+
+```text
+Use architecture-design in Existing Design mode for [topic]. Start with C1/C2 and wait for my validation.
+```
+
 ## Use it
 
 ### 1. New Design — start from a concept or brief
