@@ -16,7 +16,7 @@ Converse in the user's language; produce an English Markdown brief for architect
 
 ## Source fidelity
 
-Preserve readable names, actors, blocks, boundaries and arrow direction. Separate observations from interpretations. Mark unreadable labels, ambiguous connectors and missing legends; proximity alone is not a relationship. Cite page/region, evidence IDs or element labels for important observations.
+Preserve readable names, actors, blocks, observed shape types, annotations, boundaries, arrow labels and direction. Record blocks and connections separately. Use a small provisional shape-to-semantic-type mapping, but never treat shape alone as proof of meaning. Ask the architect to confirm or override mappings (e.g. circle = event), apply confirmed mappings consistently within the diagram/project, and save them in the brief/checkpoint. Do not make them global defaults without explicit approval. Separate observations from interpretations. Mark unreadable labels, ambiguous connectors and missing legends; proximity alone is not a relationship. Cite page/region, evidence IDs or element labels for important observations.
 
 Keep logical information exchanges only where observable. Do not invent scenarios, components, APIs or technologies. Keep inferred details provisional and unresolved questions explicit. Disclose capability gaps; never modify the source or its sharing settings during extraction.
 
