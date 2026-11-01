@@ -10,7 +10,7 @@
 
 ## Purpose and scope
 
-Describe the goal and system boundary in English. This is the shared canonical source for architecture-design, derived Mermaid previews and Lucid. In architecture-design projects, use one instance per design level: high-level-design/architecture.md owns C1/C2; low-level-design/architecture.md owns C3 and detailed sequences. Follow the shared schema’s context-reference rule. Each sequence has one owning model; overviews link IDs and derived diagrams. For standalone conversion, a single agreed model path is also valid. Default mode: logical. Default status: Proposed. Add Status/Sources columns only when rows need overrides.
+Describe the goal and system boundary in English. This is the shared canonical source for architecture-design, derived Mermaid previews and Lucid. In architecture-design projects, use one instance per design level: high-level-design/architecture-model.md owns C1/C2; low-level-design/architecture-model.md owns C3 and detailed sequences. Follow the shared schema’s context-reference rule. Each sequence has one owning model; design documents link IDs and derived diagrams. For standalone conversion, a single agreed model path is also valid. Default mode: logical. Default status: Proposed. Add Status/Sources columns only when rows need overrides.
 
 ## Sources
 

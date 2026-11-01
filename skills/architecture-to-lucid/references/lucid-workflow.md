@@ -1,6 +1,6 @@
 # Lucid workflow
 
-Run this workflow only for an explicit architect request concerning Lucid. Never call the connector automatically during interviews, checkpoints or artifact synchronization. Creation/update requires an explicit rendering request; normalization, validation, generic previews and pending refreshes do not authorize it. Reuse existing canonical Markdown without restarting the interview and render only the explicitly requested C1/C2/C3 views or sequences. Mermaid in `overview.md` remains the default lightweight rendering.
+Run this workflow only for an explicit architect request concerning Lucid. Never call the connector automatically during interviews, checkpoints or artifact synchronization. Creation/update requires an explicit rendering request; normalization, validation, generic previews and pending refreshes do not authorize it. Reuse existing canonical Markdown without restarting the interview and render only the explicitly requested C1/C2/C3 views or sequences. Mermaid in `design-doc.md` remains the default lightweight rendering.
 
 ## Discover capabilities
 

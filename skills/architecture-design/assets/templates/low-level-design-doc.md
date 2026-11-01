@@ -1,5 +1,5 @@
 # Low level design — <System>
-Canonical Markdown: `architecture.md` — <revision>
+Canonical Markdown: `architecture-model.md` — <revision>
 C3 view / sequence IDs: <canonical IDs>
 ## Components and boundaries
 <!-- Explain the useful C3 diagrams briefly. Embed only derived previews labeled with source path, IDs and revision; no repeated inventory. -->
@@ -8,4 +8,4 @@ C3 view / sequence IDs: <canonical IDs>
 ## Implementation details
 <!-- Link component specifications, contracts and orchestrators only when useful and present. -->
 ## Decisions and remaining questions
-<!-- Link ADRs and canonical Open questions; keep this overview short. -->
+<!-- Link ADRs and canonical Open questions; keep this design document short. -->

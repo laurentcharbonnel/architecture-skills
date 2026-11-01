@@ -5,8 +5,8 @@ Source: architecture-framework-v2(1).zip (2026-10-31). Compare reusable content 
 | ZIP capability/resource | Current location or intentional evolution |
 | --- | --- |
 | Interview, 3–4 questions, approved answers, English artifacts | skills/architecture-design/SKILL.md |
-| C1 scope and C2 containers / logical information flow | Structure, references/workflow.md; assets/templates/high-level-overview.md |
-| C3 components and interactions | Structure then Sequence; low-level-overview.md, optional component.md and shared canonical sequence sections |
+| C1 scope and C2 containers / logical information flow | Structure, references/workflow.md; assets/templates/high-level-design-doc.md |
+| C3 components and interactions | Structure then Sequence; low-level-design-doc.md, optional component.md and shared canonical sequence sections |
 | Technical API/event/data contracts | Contracts; workflow reference and contract.yaml skeleton |
 | Implementation readiness, no default code generation | Implementation and component.md; code only by separate request |
 | Recommended team review, nonblocking continuation | SKILL.md and references/workflow.md; review.md template; checkpoint review status/feedback |

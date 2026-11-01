@@ -58,7 +58,7 @@ class MarkdownTests(unittest.TestCase):
         self.assertEqual(model['sequences'][0]['message_count'], 61)
 
     def test_blank_template_is_incomplete(self):
-        _, errors, _ = checked((ASSETS / 'architecture-template.md').read_text())
+        _, errors, _ = checked((ASSETS / 'architecture-model-template.md').read_text())
         self.assertTrue(errors)
 
     def test_compact_defaults(self):

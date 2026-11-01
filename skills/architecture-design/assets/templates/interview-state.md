@@ -6,8 +6,8 @@ C1/C2 architect validation / provisional continuation and risks:
 Phase: Structure | Sequence | Contracts | Implementation
 Design level: high level design | low level design
 Current focus:
-HLD canonical path / last validated revision:
-LLD canonical path / last validated revision:
+HLD canonical path / last validated revision: high-level-design/architecture-model.md / <revision>
+LLD canonical path / last validated revision: low-level-design/architecture-model.md / <revision>
 HLD context references in LLD / pending reconciliation:
 Current view / sequence IDs:
 Canonical validation errors or unavailable checks:

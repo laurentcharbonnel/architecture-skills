@@ -32,23 +32,23 @@ No credentials are bundled, and the skill does not configure or authenticate an 
 ### 1. Normalize an external document
 
 ```text
-/architecture-to-lucid Normalize docs/external-spec.md into docs/architecture.md using the bundled template. Preserve source references, mark inferred structure Proposed and list missing information. Do not create Lucid documents yet.
+/architecture-to-lucid Normalize docs/external-spec.md into docs/architecture-model.md using the bundled template. Preserve source references, mark inferred structure Proposed and list missing information. Do not create Lucid documents yet.
 ```
 
-You can also copy [architecture-template.md](assets/architecture-template.md) and fill it yourself. The completed [domain-tasks-example.md](assets/domain-tasks-example.md) demonstrates C1, C2, a proposed logical C3 and a sequence with failure/retry branches.
+You can also copy [architecture-model-template.md](assets/architecture-model-template.md) and fill it yourself. The completed [domain-tasks-example.md](assets/domain-tasks-example.md) demonstrates C1, C2, a proposed logical C3 and a sequence with failure/retry branches.
 
 ### 2. Create Lucid from the Markdown
 
 ```text
-/architecture-to-lucid Create the C1 and C2 views from docs/architecture.md in Lucid. Apply the convention, verify actual readback and visual output, and save the links and fidelity report.
+/architecture-to-lucid Create the C1 and C2 views from docs/architecture-model.md in Lucid. Apply the convention, verify actual readback and visual output, and save the links and fidelity report.
 ```
 
-Request C3 and sequence sections when needed. Missing details stay explicit; logical views need not select a stack. Lucid creation/update is strictly on-demand: only an explicit architect request authorizes the selected C1/C2/C3 views or sequences. Never call the connector automatically during interviews, checkpoints or artifact synchronization. Reuse canonical Markdown without restarting the interview; prefer targeted updates to existing diagrams when the MCP supports them. Mermaid remains the default lightweight rendering in `overview.md`. Normalization, validation and generic preview requests do not authorize Lucid generation.
+Request C3 and sequence sections when needed. Missing details stay explicit; logical views need not select a stack. Lucid creation/update is strictly on-demand: only an explicit architect request authorizes the selected C1/C2/C3 views or sequences. Never call the connector automatically during interviews, checkpoints or artifact synchronization. Reuse canonical Markdown without restarting the interview; prefer targeted updates to existing diagrams when the MCP supports them. Mermaid remains the default lightweight rendering in `design-doc.md`. Normalization, validation and generic preview requests do not authorize Lucid generation.
 
 ### 3. Review a manual change
 
 ```text
-/architecture-to-lucid Compare the saved architecture.md and Lucid mapping with the current diagrams. Report changes, then update the Markdown to reflect my edits.
+/architecture-to-lucid Compare the saved architecture-model.md and Lucid mapping with the current diagrams. Report changes, then update the Markdown to reflect my edits.
 ```
 
 ## Resources and output
@@ -71,7 +71,7 @@ Python 3.9+; standard library only. From the repository root:
 
 ```bash
 python3 skills/architecture-to-lucid/scripts/validate_markdown.py skills/architecture-to-lucid/assets/domain-tasks-example.md
-python3 skills/architecture-to-lucid/scripts/validate_markdown.py docs/architecture.md --json > docs/architecture-model.json
+python3 skills/architecture-to-lucid/scripts/validate_markdown.py docs/architecture-model.md --json > docs/architecture-model.json
 python3 skills/architecture-to-lucid/scripts/test_validate_markdown.py
 ```
 

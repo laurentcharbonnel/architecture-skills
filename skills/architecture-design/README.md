@@ -19,7 +19,7 @@ Run the copy from the repository root. Compare or back up an existing destinatio
 
 Provide the project specifications path. Generic design patterns and artifact templates are bundled with this skill. When enterprise guidance is needed, provide access to an authorized enterprise GitHub repository containing standards and a platform catalog. The skill records its location once and applies approved rules by reference. It works without enterprise access, leaving enterprise choices unverified rather than inventing them. No technology or enterprise standard is pre-approved. Keep specifications and implementation repositories separate where project policy requires it.
 
-Lucid is strictly on-demand: never call its connector automatically during interviews, checkpoints or artifact synchronization. Only an explicit architect request authorizes Lucid creation/update for the requested C1/C2/C3 views or sequences, reusing canonical Markdown without restarting the interview; prefer targeted updates when the MCP supports them. Mermaid remains the default lightweight rendering in `overview.md`. No MCP connection is required for the interview. To extract a Lucid source first, use [lucid-to-brief](../lucid-to-brief/README.md); to publish C4 views, use [architecture-to-lucid](../architecture-to-lucid/README.md).
+Lucid is strictly on-demand: never call its connector automatically during interviews, checkpoints or artifact synchronization. Only an explicit architect request authorizes Lucid creation/update for the requested C1/C2/C3 views or sequences, reusing canonical Markdown without restarting the interview; prefer targeted updates when the MCP supports them. Mermaid remains the default lightweight rendering in `design-doc.md`. No MCP connection is required for the interview. To extract a Lucid source first, use [lucid-to-brief](../lucid-to-brief/README.md); to publish C4 views, use [architecture-to-lucid](../architecture-to-lucid/README.md).
 
 Optional agents are in [claude-agents/](../../claude-agents/). From the repository root:
 
@@ -60,21 +60,21 @@ The [intake guidance](references/workflow.md#existing-design-intake) separates d
 
 ## Resources and output
 
-**Human-readable:** `overview.md` explains the design briefly with useful, explained diagrams; `review.md` captures feedback and open decisions. Optional component/orchestrator specifications and minimal ADRs add implementation detail or rationale only when useful.
+**Human-readable:** `design-doc.md` explains the design briefly with embedded Mermaid diagrams and concise explanations; `review.md` captures feedback and open decisions. Optional component/orchestrator specifications and minimal ADRs add implementation detail or rationale only when useful.
 
-**Machine/agent-readable:** each `architecture.md` is a structured canonical model using the same [schema](../architecture-to-lucid/references/markdown-format.md) and [template](../architecture-to-lucid/assets/architecture-template.md). Agents use its tables and sequence PlantUML to generate Mermaid/Lucid. `contracts/` holds machine-readable OpenAPI/event schemas; `interview/state.md` is the resume checkpoint.
+**Machine/agent-readable:** each `architecture-model.md` is a structured canonical model using the same [schema](../architecture-to-lucid/references/markdown-format.md) and [template](../architecture-to-lucid/assets/architecture-model-template.md). Agents use its tables and sequence PlantUML to generate Mermaid/Lucid. `contracts/` holds machine-readable OpenAPI/event schemas; `interview/state.md` is the resume checkpoint.
 
 ```text
 high-level-design/
-  overview.md          # short human explanation of C1/C2
-  architecture.md      # canonical C1/C2 model
-  review.md            # lightweight feedback and open decisions, when useful
+  design-doc.md          # short human explanation of C1/C2
+  architecture-model.md  # canonical C1/C2 model
+  review.md              # lightweight feedback and open decisions, when useful
 low-level-design/
-  overview.md          # short human explanation of C3 and interactions
-  architecture.md      # canonical C3 model and detailed sequences
-  components/          # optional component implementation specifications
-  contracts/           # optional OpenAPI and event schemas
-  orchestrators/       # optional states, transitions and behavior
+  design-doc.md          # short human explanation of C3 and interactions
+  architecture-model.md  # canonical C3 model and detailed sequences
+  components/            # optional component implementation specifications
+  contracts/             # optional OpenAPI and event schemas
+  orchestrators/         # optional states, transitions and behavior
 decisions/             # minimal ADRs when needed
 interview/state.md     # paths, revisions, decisions and next action
 ```
@@ -92,8 +92,8 @@ Read the checkpoint first and load only relevant artifacts, phase guidance and t
 Check frontmatter, resource links and the paired installation structure. Validate each existing canonical model with the existing helper, from the repository root:
 
 ```bash
-python3 skills/architecture-to-lucid/scripts/validate_markdown.py /project/specifications/high-level-design/architecture.md
-python3 skills/architecture-to-lucid/scripts/validate_markdown.py /project/specifications/low-level-design/architecture.md
+python3 skills/architecture-to-lucid/scripts/validate_markdown.py /project/specifications/high-level-design/architecture-model.md
+python3 skills/architecture-to-lucid/scripts/validate_markdown.py /project/specifications/low-level-design/architecture-model.md
 python3 skills/architecture-to-lucid/scripts/test_validate_markdown.py
 ```
 

@@ -7,12 +7,12 @@ description: Normalize architecture documentation into compact Markdown; create 
 
 Converse in the user's language; write artifacts and diagram labels in English. Complement the architecture-design interview rather than repeating it.
 
-Lucid generation is **STRICTLY on-demand**: never automatically call the Lucid connector or generate Lucid diagrams during interviews, checkpoints or artifact synchronization. Only an explicit architect request to create or update Lucid authorizes rendering; reuse the existing canonical Markdown without restarting the interview, and process only the explicitly requested C1/C2/C3 views or sequences. Prefer targeted updates to existing Lucid diagrams when the MCP supports them, rather than full recreation. Mermaid remains the default lightweight rendering in `overview.md`; normalization, validation or a generic preview request does not authorize Lucid generation.
+Lucid generation is **STRICTLY on-demand**: never automatically call the Lucid connector or generate Lucid diagrams during interviews, checkpoints or artifact synchronization. Only an explicit architect request to create or update Lucid authorizes rendering; reuse the existing canonical Markdown without restarting the interview, and process only the explicitly requested C1/C2/C3 views or sequences. Prefer targeted updates to existing Lucid diagrams when the MCP supports them, rather than full recreation. Mermaid remains the default lightweight rendering in `design-doc.md`; normalization, validation or a generic preview request does not authorize Lucid generation.
 
 ## Load only the selected workflow
 
 - **Existing canonical Markdown (including architecture-design output):** reuse each owning path and its IDs directly (HLD C1/C2; LLD C3/sequences); validate each supplied model without re-normalizing or creating a parallel canonical file. Apply the shared schema’s context-reference rule when both levels exist.
-- **Normalize other documentation:** use [assets/architecture-template.md](assets/architecture-template.md) and [references/markdown-format.md](references/markdown-format.md). Save traceable Markdown; publishing requires a creation request.
+- **Normalize other documentation:** use [assets/architecture-model-template.md](assets/architecture-model-template.md) and [references/markdown-format.md](references/markdown-format.md). Save traceable Markdown; publishing requires a creation request.
 - **Create or update Lucid on explicit request:** validate the Markdown, then read [references/lucid-workflow.md](references/lucid-workflow.md). The explicit request is sufficient authorization within its diagram scope; respect actual tool access controls.
 - **Review edits/fidelity:** use the saved mapping and workflow reference. Integrate edits into Markdown when requested; otherwise propose a diff.
 
@@ -24,8 +24,8 @@ Use exactly [Architecture Markdown v1](references/markdown-format.md), shared wi
 
 Run the helper, resolving its path from this skill:
 ```bash
-python3 scripts/validate_markdown.py architecture.md
-python3 scripts/validate_markdown.py architecture.md --json > architecture-model.json
+python3 scripts/validate_markdown.py architecture-model.md
+python3 scripts/validate_markdown.py architecture-model.md --json > architecture-model.json
 ```
 Python 3.9+, no dependencies/network. The JSON is a disposable extraction for rendering, never a second source or an input edited independently. Keep the original Markdown path/revision in the rendering mapping. If Python is unavailable, validate manually and disclose the limitation.
 

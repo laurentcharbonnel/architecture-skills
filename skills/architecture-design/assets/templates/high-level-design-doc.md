@@ -1,5 +1,5 @@
 # High level design — <System>
-Canonical Markdown: `architecture.md` — <revision>
+Canonical Markdown: `architecture-model.md` — <revision>
 C1/C2 view IDs: <canonical IDs>
 ## Goals, scope and constraints
 ## Actors and system boundaries

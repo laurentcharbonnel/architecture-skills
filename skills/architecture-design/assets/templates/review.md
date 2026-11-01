@@ -1,6 +1,6 @@
 # High level design review — <System>
 Status: draft | in-review | reviewed
-Canonical model: `architecture.md` — <revision>
+Canonical model: `architecture-model.md` — <revision>
 ## Feedback and open decisions
 <!-- Keep short: affected canonical ID, feedback/question, owner or next action. Link existing model questions and ADRs; no copied design summary. -->
 ## Outcomes and impact on low level design
