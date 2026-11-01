@@ -35,6 +35,8 @@ Offer team review after C2, before C3. Record unresolved high level decisions an
 
 For Mermaid diagrams in `design-doc.md`, prioritize readability over exhaustiveness: aim for 5–9 elements per view, show only essential relationships, use short labels and a consistent abstraction level. Split crowded diagrams into several focused views and add a short explanation of each view. `architecture-model.md` remains the complete canonical model; never remove information from it to simplify a diagram.
 
+Apply the [Mermaid Clean / Minimal convention](references/canonical-rendering.md#mermaid-clean--minimal) when rendering these focused views; it aligns with the existing Lucid visual principles using Mermaid-native styles.
+
 ## Token budget and persistence
 
 Keep project outputs in the specifications repository. Update affected artifacts and dependants only. Record minimal ADRs when tradeoffs need traceability. Do not scan or reload the whole repository.

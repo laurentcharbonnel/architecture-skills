@@ -24,6 +24,44 @@ Use a compact Mermaid flowchart with global element IDs as node IDs and relation
 
 After generation compare the included node/edge subset, endpoints, label meaning, ownership and boundary membership with the canonical view; keep omitted information in the complete canonical model. Mermaid is a discussion preview; visual styling need not reproduce Lucid's layout.
 
+## Mermaid Clean / Minimal
+
+Apply this visual convention to Mermaid in `design-doc.md`, alongside [Readable Mermaid](../SKILL.md#readable-mermaid). It adapts the ownership palette and compact labels from the Lucid [rendering conventions](../../architecture-to-lucid/SKILL.md#rendering-and-verification) and [workflow defaults](../../architecture-to-lucid/references/lucid-workflow.md#create-selected-views); it does not reuse Lucid import configuration or require Lucid rendering.
+
+- **Palette and roles:** internal elements use pale blue `#DBEAFE`, external systems light gray `#E5E7EB`, and text dark slate `#0F172A`. Use `#155A91` as the actor accent, with pale blue fill for readable labels. Keep borders thin and muted; use a white or neutral boundary with a short title. Blue means internal ownership even outside the current focus boundary. Do not encode status or importance through extra colors; explain these in adjacent prose.
+- **Hierarchy and labels:** let the diagram title and focus boundary establish hierarchy. Use the canonical Name, shortened faithfully only when needed, and at most one essential type/technology hint. Keep relationship labels as short English actions, normally 2–3 words, with full details in the model. Avoid decorative icons, gradients, shadows and repeated descriptions. Use a cylinder for stores; a labeled rectangle is an acceptable actor approximation in portable flowcharts, disclosed beside the preview.
+- **Grouping and orientation:** group by canonical boundaries using `subgraph`, not decorative boxes. Keep context outside the focus and avoid deep nesting. Prefer `LR` for interaction paths and `TB` for layers or a narrow document; choose the direction that fits the target reading width. Do not depend on a subgraph's local direction: links to outside nodes can override it. Reduce crossings by simplifying the focused projection, without changing edge direction or inventing routing nodes.
+- **Relations and reusable styles:** use simple directed connectors with consistent weight; reserve dashed lines for a declared meaning and explain it. Use named `classDef` roles and `class` assignments for flowchart nodes, a small `style` for the boundary, and `linkStyle default` for neutral connectors. Reuse these role styles across derived blocks; keep the maintained example here rather than adding a per-project theme file. Color complements labels and shapes; it must not be the only role cue.
+- **Other Mermaid types:** flowchart classes do not apply to sequences or state diagrams. Keep their native notation, short labels and restrained grouping; use the host's supported neutral theme rather than injecting flowchart CSS. Sequence participant order, message semantics, branches and activation take precedence over visual uniformity.
+- **Compatibility and review:** use documented [flowchart syntax](https://mermaid.js.org/syntax/flowchart.html) supported by the target renderer. Do not require `%%{init}%%` directives, custom CSS/fonts, HTML labels, icon packs, new shape syntax or a particular layout engine. If styling is unsupported, keep the readable native diagram and disclose the approximation. Inspect the rendered preview at the document's reading width for contrast, clipping, crossings and overlap; syntax validation alone does not establish visual quality. Report when rendering could not be checked.
+
+### Reusable flowchart example
+
+Illustrative C2 projection only; replace IDs, labels and membership from the selected canonical view. Keep its source path, view ID, revision and included element/relationship IDs beside the derived block as described above. Here `customer` is a rectangle approximation of a Person; `payments` is external and `orders` is the focus boundary.
+
+```mermaid
+flowchart LR
+    customer["Customer (Person)"]
+    subgraph orders["Orders"]
+        api["Orders API"]
+        store[("Orders store")]
+    end
+    payments["Payments (External)"]
+
+    customer -->|Place order| api
+    api -->|Save order| store
+    api -->|Request payment| payments
+
+    classDef internal fill:#DBEAFE,stroke:#64748B,color:#0F172A,stroke-width:1px;
+    classDef external fill:#E5E7EB,stroke:#64748B,color:#0F172A,stroke-width:1px;
+    classDef actor fill:#DBEAFE,stroke:#155A91,color:#0F172A,stroke-width:1px;
+    class api,store internal;
+    class payments external;
+    class customer actor;
+    style orders fill:#FFFFFF,stroke:#94A3B8,color:#0F172A,stroke-width:1px;
+    linkStyle default stroke:#64748B,stroke-width:1px;
+```
+
 ## Canonical sequence to Mermaid
 
 Read the selected canonical PlantUML block and metadata, never another diagram. For a crowded sequence, use clearly scoped excerpts with canonical references and a short explanation of each excerpt. Within each excerpt, preserve participant order and IDs, message order, endpoints, group nesting, notes and activation; shorten display names and message text only without changing meaning, with full wording accessible in the canonical source. Map supported semantics using the [official Mermaid sequence syntax](https://mermaid.js.org/syntax/sequenceDiagram.html) for the available renderer:
