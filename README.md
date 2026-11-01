@@ -9,11 +9,24 @@ Reusable skills for architecture work and rapid prototyping with Claude Code and
 | [architecture-design](skills/architecture-design/README.md) | Start a New Design interview or reuse existing documentation with Existing Design, through structure, sequences, contracts and implementation handoff. |
 | [lucid-to-brief](skills/lucid-to-brief/README.md) | Extract a factual architecture input brief from a Lucidchart diagram or supplied export. |
 | [architecture-to-lucid](skills/architecture-to-lucid/README.md) | Consume shared canonical Architecture Markdown (normalize other inputs once) and create matching editable Lucid C1/C2/C3 and sequence diagrams. |
+| [implementation-planning](skills/implementation-planning/SKILL.md) | Independently turn a validated design into phased execution and small, testable tasks for humans or coding agents, across new or existing repositories. |
 | [rapid-prototype](skills/rapid-prototype/SKILL.md) | Quickly test a technical hypothesis or explore an interface, user flow, or simulation with a minimal interactive prototype. |
 
 The architecture skills' READMEs cover installation, prerequisites, examples, resources and validation limits. Copy whole skill folders to preserve resources. Install architecture-design alongside architecture-to-lucid: it reuses that sibling's schema, template and validator; the interview itself needs no Lucid connection.
 
 Use **Existing Design** when a topic is already documented: bounded source intake, a short gap analysis, then C1/C2 validation before deeper artifacts. Original sources stay in place; facts, inferences and gaps remain explicit. See the [usage example](skills/architecture-design/README.md#2-existing-design--reuse-architecture-already-documented).
+
+## Implementation planning
+
+`implementation-planning` is standalone: use artifacts from `architecture-design` or any existing specification/design, without installing another skill. It follows **Read Design → Inspect Repos → Identify Gaps → Plan Tasks**, handles greenfield and existing code per repository, and preserves architecture decisions and multi-repo boundaries.
+
+Copy `skills/implementation-planning/` into `.claude/skills/` (Claude Code) or `.agents/skills/` (Codex). The single `SKILL.md` is self-contained.
+
+Claude Code: `/implementation-planning Plan the approved design in docs/design.md for repositories api and web. Planning only.`
+
+Codex: `$implementation-planning Plan the approved design in docs/design.md for repositories api and web. Planning only.`
+
+Outputs are only `implementation-plan.md` and `tasks.md`: concise phases, dependencies, milestones, source references, target repositories, and verifiable acceptance criteria. Repository reading is targeted; blocking gaps remain explicit. No code is generated or executed. A human must validate the plan before implementation.
 
 ## Rapid prototyping
 
