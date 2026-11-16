@@ -8,27 +8,31 @@ Scope: reusable workflow guidance only. Do not store FactSet-specific artifacts 
 
 Move from a business need to a reviewed pull request with explicit architecture decisions, low context-transfer overhead, and small verifiable increments. ChatGPT Work owns discovery/design; Codex owns implementation. GitHub is the durable source of truth. Preserve separate repositories (no monorepo assumption).
 
+## Default ownership and precedence
+
+**Matt Pocock's skills are the default for every non-architecture stage. Our own skills are preferred only for architecture-specific work.** Keep existing skills available for backward compatibility, but do not invoke implementation-planning or rapid-prototype by default. Do not duplicate planning artifacts or interviews. This is a workflow selection policy, not an instruction to copy or modify Matt's upstream skills.
+
 ## Existing vs Matt Pocock skills
 
 | Stage | Existing capability | Matt Pocock complement | Decision |
 | --- | --- | --- | --- |
-| Clarification | architecture-design interview / Existing Design | grill-with-docs (glossary + ADRs) | Borrow terminology discipline; avoid duplicate interviews |
-| Architecture | architecture-design (HLD, LLD, contracts, ADRs) | domain-modeling / codebase-design | Keep architecture-design as authority |
-| Implementation planning | implementation-planning (implementation-plan.md, tasks.md) | to-spec (user stories, test seams), to-tickets (vertical slices, blockers) | Extend handoff conventions; do not run both planners by default |
+| Clarification | architecture-design interview / Existing Design | grill-with-docs (glossary + ADRs) | Prefer Matt's grill-with-docs and domain-modeling |
+| Architecture | architecture-design (HLD, LLD, contracts, ADRs) | domain-modeling / codebase-design | Prefer our architecture-design, lucid-to-brief and architecture-to-lucid |
+| Implementation planning | implementation-planning (implementation-plan.md, tasks.md) | to-spec (user stories, test seams), to-tickets (vertical slices, blockers) | Prefer Matt's to-spec then to-tickets; existing implementation-planning is fallback only |
 | Implementation | No production implementation skill here | implement, tdd | Use within Codex; small test-first slices at approved public seams |
 | Verification | architecture review artifacts | code-review | Review against both specification and repository standards |
-| Experiment | rapid-prototype | prototype | Keep rapid-prototype; use only to resolve a specific uncertainty |
+| Experiment | rapid-prototype | prototype | Prefer Matt's prototype; rapid-prototype is fallback only |
 
 Note: a standalone `handoff` skill was not found at `skills/engineering/handoff/SKILL.md` in Matt Pocock's repository. Treat handoff as our own artifact contract, not an attributed skill.
 
 ## Proposed flow
 
-1. **Discover** (Work): capture problem, glossary, constraints, acceptance examples and open questions. Use targeted grilling only when information is missing.
+1. **Discover** (Work): use Matt's grill-with-docs and domain-modeling as needed to capture problem, glossary, constraints, acceptance examples and open questions.
 2. **Design** (Work): use architecture-design for C1/C2 then C3, sequences, contracts and ADRs. Validate the architecture before implementation planning.
-3. **Plan** (Work or Codex planning-only): use existing implementation-planning to inspect each target repository and produce implementation-plan.md and tasks.md. Borrow Matt's vertical tracer-bullet slicing and explicit blocker edges. Use to-spec only when a behavior-focused specification is missing; do not produce redundant parallel specs.
+3. **Specify and plan** (Work or Codex planning-only): prefer Matt's to-spec for a behavior-focused specification and to-tickets for vertical tracer-bullet tickets with explicit blocking edges. Respect the approved architecture, inspect each target repository, and avoid redundant artifacts. Existing implementation-planning is a fallback only when the Matt workflow cannot meet a specific constraint.
 4. **Approve** (human): confirm repository boundaries, test seams, dependency ordering, acceptance criteria and integration risks.
-5. **Execute** (Codex): one independently verifiable vertical slice at a time. Prefer test-first red/green at agreed public seams, run typechecks and focused tests frequently, and full checks at completion. Keep changes in the appropriate target repository.
-6. **Review** (Codex + human): compare diff with the approved spec and with repo standards separately; record deviations and unresolved integration risks; create PR.
+5. **Execute** (Codex): prefer Matt's implement and tdd, one independently verifiable vertical slice at a time. Prefer test-first red/green at agreed public seams, run typechecks and focused tests frequently, and full checks at completion. Keep changes in the appropriate target repository.
+6. **Review** (Codex + human): prefer Matt's code-review; compare diff with the approved spec and with repo standards separately; record deviations and unresolved integration risks; create PR.
 7. **Feedback** (Work): update only the impacted design/ADR/plan when implementation reveals a real architectural change.
 
 ## Handoff contract (per target repository)
@@ -60,7 +64,7 @@ Measure on the pilot: (a) number of unanswered questions at handoff, (b) number 
 
 1. Review this proposed workflow with the architect.
 2. Select the pilot's actual target repository and approved design references.
-3. Test one small feature end-to-end.
+3. Test one small feature end-to-end with Matt's skills for discovery, specification, tickets, implementation and review, and our skills for architecture.
 4. Only then decide whether to add a dedicated orchestration skill or a small AGENTS.md convention.
 
 ## References
