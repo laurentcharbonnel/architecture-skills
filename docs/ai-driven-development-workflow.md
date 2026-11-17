@@ -35,6 +35,12 @@ Note: a standalone `handoff` skill was not found at `skills/engineering/handoff/
 6. **Review** (Codex + human): prefer Matt's code-review; compare diff with the approved spec and with repo standards separately; record deviations and unresolved integration risks; create PR.
 7. **Feedback** (Work): update only the impacted design/ADR/plan when implementation reveals a real architectural change.
 
+## Project-specific PR reviewer
+
+Create and commit `.codex/agents/pr_reviewer.toml` when bootstrapping each project repository. For an existing project, add it when adopting this workflow. Each repository owns its reviewer configuration. Reference it from the repository's `AGENTS.md` and run the reviewer separately from implementation for every pull request.
+
+Adapt the reviewer to the project's acceptance criteria, architecture and repository conventions, and name the CI jobs and validation commands that apply there. The reviewer works read-only against the ticket and the full diff, identifies the exact head commit it reviewed, and distinguishes blocking findings from suggestions. Run the review again after fixes change the head commit. The repository's merge policy governs how the result is used.
+
 ## Handoff contract (per target repository)
 
 - **Source references:** approved design revision, ADRs, API/message contracts, glossary.
