@@ -6,7 +6,7 @@ Scope: reusable workflow guidance only. Do not store FactSet-specific artifacts 
 
 ## Objective
 
-Move from a business need to a reviewed pull request with explicit architecture decisions, low context-transfer overhead, and small verifiable increments. ChatGPT Work owns discovery/design; Codex owns implementation. GitHub is the durable source of truth. Preserve separate repositories (no monorepo assumption).
+Move from a business need to a reviewed pull request with explicit architecture decisions, low context-transfer overhead, and small verifiable increments. ChatGPT Work owns discovery, design and functional specifications; Codex owns the execution plan and implementation in the local repository clone. GitHub is the durable source of truth. Preserve separate repositories (no monorepo assumption).
 
 ## Default ownership and precedence
 
@@ -29,7 +29,7 @@ Note: a standalone `handoff` skill was not found at `skills/engineering/handoff/
 
 1. **Discover** (Work): use Matt's grill-with-docs and domain-modeling as needed to capture problem, glossary, constraints, acceptance examples and open questions.
 2. **Design** (Work): use architecture-design for C1/C2 then C3, sequences, contracts and ADRs. Validate the architecture before implementation planning.
-3. **Specify and plan** (Work or Codex planning-only): prefer Matt's to-spec for a behavior-focused specification and to-tickets for vertical tracer-bullet tickets with explicit blocking edges. Respect the approved architecture, inspect each target repository, and avoid redundant artifacts. Existing implementation-planning is a fallback only when the Matt workflow cannot meet a specific constraint.
+3. **Specify** (Work, published to GitHub) and **plan** (Codex in the local clone): prefer Matt's to-spec for a behavior-focused specification and to-tickets for vertical tracer-bullet tickets with explicit blocking edges. Respect the approved architecture, inspect each target repository, and avoid redundant artifacts. Existing implementation-planning is a fallback only when the Matt workflow cannot meet a specific constraint.
 4. **Approve** (human): confirm repository boundaries, test seams, dependency ordering, acceptance criteria and integration risks.
 5. **Execute** (Codex): prefer Matt's implement and tdd, one independently verifiable vertical slice at a time. Prefer test-first red/green at agreed public seams, run typechecks and focused tests frequently, and full checks at completion. Keep changes in the appropriate target repository.
 6. **Review** (Codex + human): prefer Matt's code-review; compare diff with the approved spec and with repo standards separately; record deviations and unresolved integration risks; create PR.
@@ -78,3 +78,9 @@ Measure on the pilot: (a) number of unanswered questions at handoff, (b) number 
 - Matt Pocock: https://github.com/mattpocock/skills
 - Existing repository: skills/architecture-design/, skills/implementation-planning/, skills/rapid-prototype/
 - Matt's skills: skills/engineering/grill-with-docs/, to-spec/, to-tickets/, implement/, tdd/, code-review/
+
+## Local execution ownership — adopted 19 November 2026
+
+Work prepares functional specifications, acceptance criteria and constraints and commits them to GitHub. The user clones or updates the target repository locally and opens it in Codex. Codex reads the published specifications, builds and tracks the execution plan, implements, tests and coordinates the project reviewer. The user steers execution directly in Codex. GitHub records specifications, code, pull requests and review evidence.
+
+The previous Work-to-Latitude background service and ticket queue are retired. Open the existing local Codex project to continue implementation. Work resumes specification work using the latest GitHub state.
